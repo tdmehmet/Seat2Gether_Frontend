@@ -1,0 +1,216 @@
+<ba-card title=" {{'reports.reportdetails.reports' | translate }}" baCardClass="with-scroll">
+<div class="row col-md-12">
+
+
+  <div class="row  col-md-12">
+    <div class="col-md-6">
+
+      <ba-card title="{{'reports.reportdetails.reporttypes' | translate }}" baCardClass="with-scroll button-panel">
+
+        <div class="btn-group btn-group-vertical">
+          <table border="1" aria-rowspan="1" aria-colspan="1">
+            <tr>
+              <th>
+                &nbsp;
+              </th>
+            </tr>
+            <tr>
+              <th><a href="{{credentialsVals.host}}/Reports/CutReport/CutReport.aspx?BBNr={{bbnr}}" target="_blank"
+                     class="btn btn-primary">{{'reports.reportdetails.buttons.cutting' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="{{credentialsVals.host}}/Reports/GesslerReport/GesslerReport.aspx?BBNr={{bbnr}}" target="_blank"
+                     class="btn btn-success">{{'reports.reportdetails.buttons.gessler' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="{{credentialsVals.host}}/Reports/StitchingReport/StitchingReport.aspx?BBNr={{bbnr}}" target="_blank" class="btn btn-primary">{{'reports.reportdetails.buttons.stitching' | translate }}</a>
+              </th>
+              <th><a href="#" class="btn btn-danger">{{'reports.reportdetails.buttons.stitchingcurtain' | translate
+                }}</a></th>
+            </tr>
+
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.montage' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.extraseat' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                &nbsp;
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.seatmask' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.ugautomat' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.pushersaw' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th>&nbsp;</th>
+              <th><a href="#" class="btn btn-danger">{{'reports.reportdetails.buttons.qsverification' | translate
+                }}</a></th>
+            </tr>
+            <tr>
+              <th>
+                &nbsp;
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.seatfoot' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.headpiping' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.labels' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.overview' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.labelc2' | translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.KSW' | translate }}</a></th>
+            </tr>
+            </th>
+            <th rowspan="2">
+              <a href="#" class="btn btn-danger">{{'reports.reportdetails.buttons.barcode' | translate }}</a>
+            </th>
+            </tr>
+          </table>
+
+        </div>
+
+
+      </ba-card>
+
+
+    </div>
+
+    <div class="col-md-6">
+      <ba-card title="{{'reports.reportdetails.testplans' | translate }}" baCardClass="with-scroll table-panel">
+        <div class="col-md-12">
+          <label for="codeValue">{{'reports.reportdetails.buttons.presspreviewtype' | translate}}</label>
+          <combo-box
+            id="codeValue"
+            [listData]="codeValueList"
+            [displayField]="'code'"
+            [valueField]="'value'"
+            [(ngModel)]="selectedCodeValue"
+            [forceSelection]="true"
+            [localFilter]="true"
+            [inputClass]="'form-control'"
+            [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [editable]="false">
+          </combo-box>
+        </div>
+        <div class="col-md-12">&nbsp;</div>
+        <div class="col-md-12 btn-group btn-group-vertical">
+          <table border="1" aria-rowspan="1" aria-colspan="1">
+            <tr>
+              <th>
+            <tr>
+              <th>
+                &nbsp;
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" target="_new" class="btn btn-primary">{{'reports.reportdetails.buttons.testplan' |
+                translate }}</a></th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.aa5cutting' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.aa6stitching' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.qs1extraseat' | translate}}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.aa4upholstery' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.qs4upholstery' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-primary">{{'reports.reportdetails.buttons.qs2assembly' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th><a href="#" class="btn btn-success">{{'reports.reportdetails.buttons.qs3fitting' | translate }}</a>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                &nbsp;
+              </th>
+            </tr>
+            </th>
+            <th colspan="10">
+              <a href="#" class="btn btn-danger">{{'reports.reportdetails.buttons.reportdirectprint' | translate }}</a>
+            </th>
+            </tr>
+          </table>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+
+    <ba-card title="{{'reports.reportdetails.reportlogs' | translate }}" baCardClass="with-scroll table-panel">
+      <table class="table table-striped" [mfData]="reportLogList" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+        <tr>
+          <th>{{'reports.reportdetails.report' | translate}}</th>
+          <th>{{'reports.reportdetails.deck' | translate}}</th>
+          <th>{{'reports.reportdetails.reportdate' | translate}}</th>
+          <th>{{'reports.reportdetails.reportuser' | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of mf.data" align="right">
+          <td align="right">{{item.reportName}}</td>
+          <td align="right">{{item.deck}}</td>
+          <td align="right">{{item.reportDate}}</td>
+          <td align="right">{{item.reportUser}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </ba-card>
+
+  </div>
+
+
+</div>
+<errormodal #errormodal></errormodal>
+<successmodal #successmodal></successmodal>
+<div
+  [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }">
+</div>
+

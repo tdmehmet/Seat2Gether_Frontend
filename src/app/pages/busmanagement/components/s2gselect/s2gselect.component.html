@@ -1,0 +1,28 @@
+<div class="input-group">
+  <span *ngIf="_value" class="input-group-btn">
+    <button class="btn btn-danger" (click)="clearSelected()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </span>
+  <input type="text" [disabled]="false" [value]="_value" (input)="onChange($event)" class="form-control with-danger-addon" [placeholder]="placeholder">
+  <span class="input-group-btn">
+    <button class="btn btn-success" (click)="selectmodal.open('lg')">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </span>
+</div>
+<modal #selectmodal>
+  <modal-header class="bg-success">
+    <h4 class="modal-title">
+      Kumaş Seçimi
+    </h4>
+  </modal-header>
+  <modal-body>
+    <ng2-smart-table [settings]="settings" [source]="gridData" (custom)="selectItem($event)"></ng2-smart-table>
+  </modal-body>
+  <modal-footer>
+    <div class="button-wrapper">
+      <button type="button" class="btn btn-success" id="btnCloseErrorModal" (click)="closeModal()">{{'modal.close' | translate}}</button>
+    </div>
+  </modal-footer>
+</modal>

@@ -1,0 +1,79 @@
+@import "../../../../theme/sass/conf/conf";
+
+.modal-lg {
+  width: 70%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.modal-dialog {
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.modal {
+  position: sticky;
+  top: 0;
+  right: 10%;
+  bottom: 0;
+  left: 10%;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.bus_report_calendar_ico{
+  width: 1.2rem; 
+  height: 1rem; 
+  cursor: pointer;
+}
+
+.form-group{
+  margin-bottom:0px;
+}
+
+.filter_frame{
+  border:1px solid grey; 
+  border-radius: 5px; 
+  padding:10px; 
+  background:#f7f7f7;
+}
+
+.button-wrapper{
+  display:block;
+  padding:10px;
+  float:right;
+}
+.search_info_text{
+  font-size: 12px;
+}
+
+.result_frame_table{
+  margin-top:15px;
+}
+.search_frame{
+  border:1px solid grey; 
+  border-radius: 5px; 
+  float:left;
+  width:100%;
+  background:#f7f7f7;
+  padding:10px;
+}
+.no-collapsed{
+  border-collapse: inherit;
+}
+
+.result_frame_table{
+  overflow: auto;
+}
+.clickable{
+  cursor: pointer;
+}
+.clickable:hover{
+  background-color: rgb(174, 212, 255);
+}
+.table_header{
+  background:rgb(223, 237, 255);
+  border-left:1px solid white;
+}

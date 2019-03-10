@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header bg-success text-white">{{'external.busmanagement.busmaterial.materialadd.ADD_MATERIAL' | translate}}</div>
+  <div class="card-content" [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }">
+    <form #addMaterialForm="ngForm">
+      <div class="row col-md-12" style="margin-top:7px">
+        <div class="col-md-6">
+          <div class="col-xs-10">
+            <input *ngIf="otherStation" required class="form-control form-control-sm" [(ngModel)]="newMaterial.stationNumber" placeholder="{{'external.busmanagement.busmaterial.materialadd.STATION_NUMBER' | translate}}"
+              type="text" name="newStationCode" id="newStationCode">
+            <combo-box *ngIf="!otherStation" [required]="true" name="newStationCodeCmb" [listData]="stationList" [displayField]="'stationNumber'"
+              [valueField]="'stationNumber'" [(ngModel)]="newMaterial.stationNumber" [forceSelection]="true" [localFilter]="true"
+              [inputClass]="'form-control form-control-sm'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+              [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="false">
+            </combo-box>
+          </div>
+          <div class="col-xs-2">
+            <input [(ngModel)]="otherStation" type="checkbox" name="otherStation"> {{'external.busmanagement.busmaterial.materialadd.OTHER' | translate}}
+          </div>
+        </div>
+        <div class="col-md-3">
+          <input required class="form-control form-control-sm" [(ngModel)]="newMaterial.unit" placeholder="{{'external.busmanagement.busmaterial.materialadd.UNIT' | translate}}"
+            type="text" name="newMaterialUnit" id="newMaterialUnit">
+        </div>
+        <div class="col-md-3">
+          <input required class="form-control form-control-sm" [(ngModel)]="newMaterial.quantity" placeholder="{{'external.busmanagement.busmaterial.materialadd.QUANTITY' | translate}}"
+            type="number" name="newMaterialQuantity" id="newMaterialQuantity">
+        </div>
+        <div class="col-md-6">
+          <input required class="form-control form-control-sm" [(ngModel)]="newMaterial.materialNumber" placeholder="{{'external.busmanagement.busmaterial.materialadd.MATERIAL_NUMBER' | translate}}"
+            type="text" name="newMaterialComponentCode" id="newMaterialComponentCode">
+        </div>
+        <hr>
+        <div class="col-md-6">
+          <input required class="form-control form-control-sm" [(ngModel)]="newMaterial.materialName" placeholder="{{'external.busmanagement.busmaterial.materialadd.MATERIAL_NAME' | translate}}"
+            type="text" name="newMaterialComponentName" id="newMaterialComponentName">
+        </div>
+        <!-- <div class="col-md-6">
+          <input required class="form-control form-control-sm" [(ngModel)]="newMaterial.subGroupId" placeholder="{{'busmanagement.busmaterial.materialadd.SUB_GROUP_NUMBER' | translate}}"
+            type="text" name="newMaterialsubGroupId" id="newMaterialsubGroupId">
+        </div> -->
+        <div class="col-md-12" style="margin:7px 0 7px 0">
+          <button class="btn btn-success" [disabled]="!addMaterialForm.valid" (click)="addMaterial()">{{'external.busmanagement.busmaterial.materialadd.SAVE' | translate}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<errormodal #errormodal></errormodal>

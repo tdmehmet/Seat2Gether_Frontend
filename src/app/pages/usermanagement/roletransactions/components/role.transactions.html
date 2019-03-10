@@ -1,0 +1,139 @@
+<div class="form-group">
+  <ba-card title="{{'usermanagement.rolebinding.searchheader' | translate}}" baCardClass="with-scroll">
+    <div class="row col-md-12">
+
+      <div class="col-md-4">
+        <label for="userName">{{'usermanagement.rolebinding.username' | translate}}</label>
+        <input type="text" class="form-control" id="userName"
+               placeholder="{{'usermanagement.rolebinding.username' | translate}}">
+        <!-- <mercedesmultipleautocomplete
+                                     disabled="false"
+                                     label="{{'usermanagemfrontding.username' | translate}}"
+                                     id="username"
+                                     name="username"
+                                     [list]="userAutoCompleteList"
+                                     [selectedItemList]="selectedUserList"
+                                     (keyup) = "onUserNameKeyUp($event)"
+         ></mercedesmultipleautocomplete>-->
+      </div>
+      <div class="col-md-4">
+        <label for="personnelName">{{'usermanagement.rolebinding.personnelName' | translate}}</label>
+        <input type="text" class="form-control" id="personnelName"
+               placeholder="{{'usermanagement.rolebinding.personnelName' | translate}}">
+      </div>
+      <div class="col-md-4">
+        <label for="personnelSurname">{{'usermanagement.rolebinding.personnelSurname' | translate}}</label>
+        <input type="text" class="form-control" id="personnelSurname"
+               placeholder="{{'usermanagement.rolebinding.personnelSurname' | translate}}">
+      </div>
+    </div>
+    <br>
+    <div class="row col-md-12">
+
+      <div class="col-md-4">
+        <label for="email">{{'usermanagement.rolebinding.email' | translate}}</label>
+        <input type="text" class="form-control" id="email"
+               placeholder="{{'usermanagement.rolebinding.email' | translate}}">
+      </div>
+      <div class="col-md-4">
+        <label for="phoneNumber">{{'usermanagement.rolebinding.phoneNumber' | translate}}</label>
+        <input type="text" class="form-control" id="phoneNumber"
+               placeholder="{{'usermanagement.rolebinding.phoneNumber' | translate}}">
+      </div>
+    </div>
+    <br>
+    <div class="row mb-12 table-filter">
+      <div class="form-group col-12">
+        <div style="height:2px;width:100%;background-color:#dadada;display:block"></div>
+      </div>
+    </div>
+    <br>
+    <div class="row col-md-12">
+      <div class="col-md-4">
+        <div class="button-wrapper" align="left">
+          <button type="button" class="btn btn-success">{{'usermanagement.rolebinding.filter' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </ba-card>
+</div>
+
+
+<!--<ag-grid-angular style="width: 500px; height: 115px;" class="ag-fresh"
+// Grid Definition
+                 [rowData]="rowData"
+                 [columnDefs]="columnDefs">
+
+  enableFilter <!-- shorthand for [enableFilter]="true"-->
+<!--</ag-grid-angular>-->
+
+<ba-card title="User List" baCardClass="with-scroll">
+<table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+  <thead>
+  <tr>
+
+    <th style="width: 10%">
+      <mfDefaultSorter by="userName">Username</mfDefaultSorter>
+    </th>
+    <th style="width: 10%">
+      <mfDefaultSorter by="personnelName">Name</mfDefaultSorter>
+    </th>
+    <th style="width: 10%">
+      <mfDefaultSorter by="personnelSurname">Surname</mfDefaultSorter>
+    </th>
+    <th style="width: 10%">
+      <mfDefaultSorter by="email">Email</mfDefaultSorter>
+    </th>
+    <th style="width: 10%">
+      <mfDefaultSorter by="phoneNumber">Phone Number</mfDefaultSorter>
+    </th>
+    <th style="width: 10%">
+      <mfDefaultSorter by="dateCreated">User Start Date</mfDefaultSorter>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of mf.data">
+    <td>{{item.userName}}</td>
+    <td>{{item.personnelName}}</td>
+    <td>{{item.personnelSurname}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.phoneNumber}}</td>
+    <td>{{item.dateCreated}}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="4">
+      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+    </td>
+  </tr>
+  </tfoot>
+</table>
+</ba-card>
+
+
+
+<!--<div class="widgets">
+
+  <div class="row">
+
+    </ba-card>
+  </div>
+
+</div>-->
+
+
+<modal #errormodal>
+  <modal-header class="bg-danger">
+    <h4 class="modal-title">
+      {{'modal.error' | translate}}
+    </h4>
+  </modal-header>
+  <modal-body>
+    {{errorText | translate}} {{error == null? "": error.toString()}}
+  </modal-body>
+  <modal-footer [show-default-buttons]="true"></modal-footer>
+</modal>
+
+

@@ -1,0 +1,501 @@
+{
+  "login": {
+    "title": "SEAT2GETHER",
+    "username": "User Id",
+    "password": "Password",
+    "sign_in": "Sign in",
+    "error": "Error",
+    "invalidcredientials": "Invalid user or password",
+    "systemerror": "System Error : "
+  },
+  "modal": {
+    "error": "Error",
+    "success": "Process Completed",
+    "busyMessage": "Please Wait",
+    "close": "Close",
+    "systemerror": "System Error : ",
+    "detail": {
+      "show": "Show Details",
+      "hide": "Hide Details"
+    },
+    "search": "Search in List"
+  },
+  "ng2datagrid": {
+    "column": {
+      "title": {
+        "action": "Actions"
+      }
+    }
+  },
+  "general": {
+    "search": "Search"
+  },
+  "usermanagement": {
+    "rolebinding": {
+      "username": "Username",
+      "personnelName": "Personnel Name",
+      "personnelSurname": "Personnel Surname",
+      "searchheader": "User Search Criterias",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "close": "Close",
+      "filter": "Filter",
+      "dateCreated": "Start Date",
+      "userdetails": "User Details",
+      "save": "Save",
+      "roleId": "Role Id",
+      "roleName": "Role Name",
+      "successSaveText": "User Role Mapping Successfully Completed",
+      "reset": "Reset"
+
+    }
+  },
+  "masterdata": {
+    "frontdata": {
+      "pleaseSelect": "Please Select",
+      "colour": "Colour",
+      "characteristic": "Characteristic",
+      "characteristicDG": {
+        "characteristicColumn": {
+          "lfdnrCharacteristic": "lfdnrCharacteristic",
+          "characteristicValue": "characteristic",
+          "area": "area",
+          "sort": "sort"
+        }
+      },
+      "status": "Status",
+      "statusDG": {
+        "statusColumn": {
+          "statusId": "Status Index",
+          "statusName": "Status Name"
+        }
+      },
+      "chairType": "Chair Type",
+      "chairTypeDG":{
+        "chairTypeColumn":
+        {
+          "lfdnrChairType":"Lfdnr Chair Type",
+          "chairType":"Chair Type",
+          "classification":"Classification",
+          "setupTime":"Setup Time",
+	        "active":"Active",
+	        "janzList":"Janz List",
+	        "outsideCompany":"Outside Company",
+	        "feedback":"Feedback",
+	        "referenceTime":"Reference Time",
+	        "presetTimeReferenceSlot":"Preset Time Reference Slot",
+	        "group":"Group",
+	        "upholsteryLine":"Upholstery Line",
+	        "tbSeatFrame":"TB Seat Frame",
+	        "colloquial":"Colloquial",
+	        "factorForNumberCalculation":"Factor For Number Calculation"
+        }
+      },
+      "materialOrigin": "Material Origin",
+      "materialOriginDG": {
+        "materialOriginColumn": {
+          "lfdnrMaterial": "lfdnrMaterial",
+          "partNumber": "partNumber",
+          "designation": "designation",
+          "position": "position",
+          "lfdnrCharacteristic": "lfdnrCharacteristic",
+          "standardTimeInMinute": "standardTimeInMinute",
+          "vzko": "VZKO",
+          "VZBW": "VZBW",
+          "VZEL": "VZEL",
+          "VZAZ": "VZAZ",
+          "VZVS": "VZVS",
+          "VZMO": "VZMO",
+          "VZAL": "VZAL",
+          "VZGF": "VZGF",
+          "standart": "standart",
+          "active": "active",
+          "createdBy": "createdBy",
+          "createdOn": "createdOn",
+          "alteredFrom": "alteredFrom",
+          "changedOn": "changedOn",
+          "bulkGood": "bulkGood",
+          "numberAdditionalShare": "numberAdditionalShare",
+          "background": "background",
+          "foreground": "foreground",
+          "posX": "posX",
+          "posY": "posY",
+          "picture": "picture",
+          "acquisitionVariation": "acquisitionVariation",
+          "partNumberWithout": "partNumberWithout"
+        }
+      },
+      "additionalDisclosure": "Additional Disclosure",
+      "additionalDisclosureDG":{
+        "additionalDisclosureColumn":{
+          "LfdnrSpecification":"LFDNR Specification",
+          "Specification":"Specification",
+          "StandardTime":"Standart Time"
+        }
+      },
+      "matrix": "Matrix",
+      "user": "User",
+      "title": "Master Data Front",
+      "colourDG": {
+        "colourColumn": {
+          "colourId": "Colour Index",
+          "colourName": "Colour Name"
+        }
+      },
+      "rearSeatPan": "Rear Seat Pan",
+      "rearSeatPanDG": {
+        "rearSeatPanColumn": {
+          "rearSeatPanId": "Part Number",
+          "narrow": "Narrow",
+          "characteristic": "Characteristic",
+          "remark": "Remark"
+        }
+      },
+      "wallConnection": "Wall Connection",
+      "wallConnectionDG": {
+        "wallConnectionColumn": {
+          "wallConnectionId": "Part Number",
+          "characteristic": "Characteristic"
+        }
+      },
+      "chairFoot": "Chair Foot",
+      "chairFootDG": {
+        "chairFootColumn": {
+          "chairFootId": "Part Number",
+          "chairFootName": "Characteristic"
+        }
+      },
+      "lateralAdjustment": "Lateral Adjustment",
+      "lateralAdjustmentDG": {
+        "lateralAdjustmentColumn": {
+          "EB": "EB Number",
+          "Designation": "Designation",
+          "LateralAdjustmentLI": "Lateral Adjustment Left",
+          "LateralAdjustmentRE": "Lateral Adjustment Right",
+          "Gauge": "Gauge"
+        }
+      },
+      "belt": "EB Belt",
+      "beltDG": {
+        "beltColumn": {
+          "EB": "EB Number",
+          "Designation": "Designation",
+          "Link": "Link",
+          "Right": "Right",
+          "Program": "Program",
+          "DSCharacteristic": "DSCharacteristic",
+          "NumberOfBack": "Number Of Back",
+          "Arrangement": "Arrangement"
+        }
+      },
+      "sideCover": "Side Cover",
+      "sideCoverDG": {
+        "sideCoverColumn": {
+          "PartNumber": "Part Number",
+          "Designation": "Designation",
+          "BeltAisleSide": "Belt Aisle Side",
+          "ArmRest": "Arm Rest"
+        }
+      },
+      "adjustingLever": "Adjusting Lever",
+      "adjustingLeverDG": {
+        "adjustingLeverColumn": {
+          "PartNumber": "Part Number",
+          "NumberOfBlocking": "Number Of Blocking",
+          "Designation": "Designation",
+          "Page": "Page"
+        }
+      },
+      "backrestAdjustment":"Backrest Adjustment",
+      "backrestAdjustmentDG":{
+        "backrestAdjustmentColumn":{
+          "eB":"EB",
+          "designation":"Designation",
+          "numberOfPnematicSpring":"Number Of Pneumatic Spring",
+          "pretenseLi":"Pretense Li",
+          "pretenseRe":"Pretense Re"
+        }
+    },
+    "stCharacteristic":"St Characteristic",
+    "stCharacteristicDG":{
+      "stCharacteristicColumn":{
+        "lfdnrCharacteristic":"LfdNr Characteristic",
+        "characteristic":"Characteristic",
+        "sort":"Sort",
+        "lfdnrPot":"Lfdnr Pot",
+        "cut":"Cut",
+        "stitching":"Stitching",
+        "specialSeat":"Special Seat",
+        "montage":"Montage",
+        "issueCircus":"Issue Circus",
+        "materialRevelant":"Material Revelant"
+      }
+    },
+      "stMaterialMaster":"St Material Master",
+      "stMaterialMasterDG":{
+        "stMaterialMasterColumn":{
+		    	"partNumber":"Part Number",
+			    "designations":"Designations",
+		    	"lfdNrCharacteristic":"LfdNr Characteristic",
+    			"active":"Active",
+		    	"createdBy":"Created By",
+			    "createdOn":"Created On",
+			    "alteredFrom":"Altered From",
+			    "changedOn":"Changed On",
+			    "area":"Area",
+			    "designationReport":"Designation Report",
+			    "issueLabel":"Issue Label",
+			    "columnReportSpecialSeat":"Column Report Special Seat",
+			    "issueReport":"Issue Report",
+			    "lineReportCircus":"Line Report Circus",
+			    "issueReportCircus":"Issue Report Circus",
+			    "columnSSFNS":"Column SSFNS",
+			    "issueSSFNS":"Issue SSFNS",
+			    "columnSSFS":" Column SSFS",
+			    "issueSSFS":"Issue SSFS",
+			    "labelText":"Label Text",
+			    "uGR":"UGR",
+			    "kSW":"KSW"
+		}
+  },
+  "remark":"Remark",
+  "remarkDG":{
+    "remarkColumn":{
+      "remark":"Remark"
+    }
+  },
+  "seatFrame":"Seat Frame",
+  "seatFrameDG":{
+    "seatFrameColumn":{
+      "ebNumber":"EB Number",
+      "designation":"Designation",
+      "tnrSupportTube":"TNR Support Tube",
+      "amount":"Amount",
+      "template":"Template",
+      "seatPitch":"Seat Pitch",
+      "page":"Page",
+      "colorInfo":"Color Info",
+      "adapter":"Adapter"
+    }
+  }
+
+
+    }
+  },
+  "busmanagement": {
+    "busspecification": {
+      "bbnumber": "Vehicle Number",
+      "type": "Type",
+      "country": "Country",
+      "model": "Model",
+      "vehicleseattype": "Seat Type",
+      "vehicledetails": "Bus Details",
+      "maininfo": "Bus Main Info",
+      "seatsconditioning": "Seats Conditioning Info",
+      "passenger": "Passenger",
+      "driver": "Driver",
+      "hostess": "Hostess",
+      "seatsfabric": "Seat Fabrics",
+      "dynamicheader": "Dynamic Header",
+      "sitting": "Sitting",
+      "sidearea": "Side Part",
+      "bellowsarea": "Bellows Area",
+      "beltarea": "Belt Area",
+      "backarea": "Back Area",
+      "rib": "Rib",
+      "headerdynamic": "Header Dynamic",
+      "headerfastenertype": "CitCit/Cirt :)"
+    }
+  },
+  "reports": {
+    "select": "Please Select",
+    "upperdeck": "Upper Deck",
+    "lowerdeck": "Lower Deck",
+    "busreports": {
+      "bbnumber": "BB Number",
+      "ordernumber": "Order Number",
+      "startdate": "Start Date",
+      "enddate": "End Date",
+      "customer": "Customer",
+      "bustype": "Bus Type",
+      "seattype": "Seat Type",
+      "tobedate": "Deadline",
+      "location": "Manufacturing Location",
+      "totalreport": "Collective Reports",
+      "getreports": "Report",
+      "decktype": "Deck Type",
+      "reporting": "Report"
+    },
+    "reportdetails": {
+      "reports": "Reports",
+      "report": "Report Logs",
+      "reportlogs": "Bericht Log",
+      "deck": "Source",
+      "reportdate": "Report Date",
+      "reportuser": "Report User",
+      "reporttypes": "Report Types",
+      "testplans": "QS-Documents and Test Plans",
+      "printstatus": "Print Status",
+      "notprinted" : "Not Printed",
+      "printed": "Printed",
+      "bbnr": "BBNR",
+      "buttons": {
+        "cutting": "Cutting",
+        "gessler": "Gessler",
+        "stitching": "Stitching",
+        "stitchingcurtain": "Stitching/Curtain",
+        "montage": "Assembly",
+        "extraseat": "Extra Seat",
+        "seatmask": "Seat Mask",
+        "ugautomat": "UG-Automat",
+        "pushersaw": "Pusher Saw",
+        "qsverification": "QS Verification",
+        "seatfoot": "Seat Foot",
+        "headpiping": "Head/Piping",
+        "labels": "Labels",
+        "overview": "Overview",
+        "labelc2": "Labels C2",
+        "KSW": "KSW",
+        "barcode": "Labels with Barcode",
+        "press": "Press",
+        "preview": "Preview",
+        "presspreviewtype": "Press/Preview",
+        "testplan": "Test Plan",
+        "aa5cutting": "AA5 Cutting",
+        "aa6stitching": "AA6 Stitching",
+        "qs1extraseat": "QS1 Extra Seat",
+        "aa4upholstery": "AA4 Upholstery",
+        "qs4upholstery": "QS4 Upholstery",
+        "qs2assembly": "QS2 Assembly",
+        "qs3fitting": "QS3 Fitting",
+        "reportdirectprint": "Direct Report Printing",
+        "selectallreports": "Select All"
+      }
+    }
+  },
+  "general": {
+    "akveo": "Akveo",
+    "home": "Home",
+    "forms": {
+      "option1": "Option 1"
+    },
+    "menu": {
+      "bant1tepsi1":"Tape1Trace1",
+      "dashboard": "Dashboard",
+      "editors": "Editors",
+      "ck_editor": "CKEditor",
+      "components": "Components",
+      "tree_view": "Tree View",
+      "charts": "Charts",
+      "chartist_js": "Chartist.Js",
+      "ui_features": "UI Features",
+      "typography": "Typography",
+      "buttons": "Buttons",
+      "icons": "Icons",
+      "modals": "Modals",
+      "grid": "Grid",
+      "form_elements": "Form Elements",
+      "form_inputs": "Form Inputs",
+      "form_layouts": "Form Layouts",
+      "tables": "Tables",
+      "basic_tables": "Basic Tables",
+      "smart_tables": "Smart Tables",
+      "maps": "Maps",
+      "google_maps": "Google Maps",
+      "leaflet_maps": "Leaflet Maps",
+      "bubble_maps": "Bubble Maps",
+      "line_maps": "Line Maps",
+      "pages": "Pages",
+      "login": "Login",
+      "register": "Register",
+      "menu_level_1": "Menu Level 1",
+      "menu_level_1_1": "Menu Level 1.1",
+      "menu_level_1_2": "Menu Level 1.2",
+      "menu_level_1_2_1": "Menu Level 1.2.1",
+      "external_link": "External Link"
+    },
+    "created_with": "Created with"
+  },
+  "dashboard": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "signout": "Sign Out",
+    "welcome": "Welcome",
+    "message": "Wellcome To Mercedes Benz Seat Manufacturing Automation Tool ",
+    "dailyproductionstatus": "Daily Production Status",
+    "producted": "Completed",
+    "fault": "Failed",
+    "trace1": "Band 1",
+    "trace2": "Band 2",
+    "trace3": "Band 3",
+    "totalproduction": "Total Production",
+    "weeklyproductionstatus": "Weekly Production Per Band",
+    "language": "Please Select Language",
+    "acquisition_channels": "Acquisition Channels",
+    "users_by_country": "Users by Country",
+    "revenue": "Revenue",
+    "feed": "Feed",
+    "todo_list": "To Do List",
+    "calendar": "Calendar",
+    "new_visits": "New Visits",
+    "purchases": "Purchases",
+    "active_users": "Active Users",
+    "returned": "Returned",
+    "popular_app": {
+      "super_app": "Super App",
+      "most_popular_app": "Most Popular App",
+      "total_visits": "Total Visits",
+      "new_visits": "New Visits",
+      "sales": "Sales"
+    },
+    "todo": {
+      "task_todo": "Task to do.."
+    },
+    "traffic_chart": {
+      "view_total": "Views Total"
+    }
+  },
+  "tree_view": {
+    "title": "basic",
+    "programming": "Programming languages by programming paradigm",
+    "oop": "Object-oriented programming",
+    "java": "Java",
+    "c_plus_plus": "C++",
+    "c_sharp": "C#",
+    "prototype": "Prototype-based programming",
+    "java_script": "JavaScript",
+    "coffee_script": "CoffeeScript",
+    "lua": "Lua"
+  },
+  "chart": {
+    "lines": "Lines",
+    "bars": "Bars",
+    "simple_line_chart": "Simple line chart",
+    "line_chart": "Line chart with area",
+    "bi_polar_line_chart": "Bi-polar line chart with area only",
+    "simple_bar_chart": "Simple bar chart",
+    "multi_line_labels_bar_chart": "Multi-line labels bar chart",
+    "stacked_bar_chart": "Stacked bar chart",
+    "pies_and_donuts": "Pies & Donuts",
+    "simple_pie": "Simple Pie",
+    "pie_with_labels": "Pie with labels",
+    "donut": "Donut"
+  },
+  "editorder": {
+    "ordernumber": "Order Number",
+    "bbmin": "BBNr min",
+    "bbmax": "BBNr max",
+    "comment": "Comment",
+    "status": "Status",
+    "filter":"Filter",
+    "editOrderDetailsDG":{
+      "orderDetails":"Order Details",
+      "orderNumber": "Order Number",
+      "bbmin": "BBNr min",
+      "bbmax": "BBNr max",
+      "comment": "Comment",
+      "status": "Status",
+      "workingUnit":"Working Unit"
+    }
+  }
+}

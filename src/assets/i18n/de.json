@@ -1,0 +1,539 @@
+{
+  "login": {
+    "title": "SEAT2GETHER",
+    "username": "Benutzer",
+    "password": "Passwort",
+    "sign_in": "Login",
+    "invalidcredientials": "Ungültiger Benutzer oder Passwort",
+    "systemerror": "Systemfehler : "
+  },
+  "modal": {
+    "error": "Fehler",
+    "success": "Verarbeiten Abgeschlossen",
+    "busyMessage": "Bitte Warten",
+    "close": "Schliessen",
+    "systemerror": "Systemfehler : ",
+    "detail": {
+      "show": "Details anzeigen",
+      "hide": "Details ausblenden"
+    },
+    "search": "Suche in der Liste"
+  },
+  "ng2datagrid": {
+    "column": {
+      "title": {
+        "action": "Handlungen"
+      }
+    }
+  },
+  "general": {
+    "search": "Suche"
+  },
+  "usermanagement": {
+    "rolebinding": {
+      "username": "Benutzer",
+      "personnelName": "Personalname",
+      "personnelSurname": "Personalnachname",
+      "searchheader": "Kriterien suchen",
+      "email": "Email",
+      "phoneNumber": "Telefonnummer",
+      "close": "Schliessen",
+      "filter": "Filter",
+      "dateCreated": "Anfangsdatum",
+      "userdetails": "Benutzerdetails",
+      "save": "Speichern",
+      "roleId": "RollenId",
+      "roleName": "Rollenname",
+      "successSaveText": "Text speichern erfolgreich abgeschlossen",
+      "reset": "Zurücksetzen"
+    }
+  },
+  "masterdata": {
+    "frontdata": {
+      "pleaseSelect": "Bitte Auswählen",
+      "colour": "Farbe",
+      "characteristic": "Merkmal",
+      "characteristicDG": {
+        "characteristicColumn": {
+          "lfdnrCharacteristic": "lfdnrMerkmal",
+          "characteristicValue": "Merkmal",
+          "area": "Bereich",
+          "sort": "sortieren"
+        }
+      },
+      "status": "Status",
+      "statusDG": {
+        "statusColumn": {
+          "statusId": "Status Index",
+          "statusName": "Status Name"
+        }
+      },
+      "chairType": "Stuhltyp",
+      "chairTypeDG": {
+        "chairTypeColumn": {
+          "lfdnrChairType": "Lfdnr Stuhltyp",
+          "chairType": "Stuhltyp",
+          "classification": "Klassifizierung",
+          "setupTime": "Rüstzeit",
+          "active": "Aktiv",
+          "janzList": "Janz Liste",
+          "outsideCompany": "Verlängerte Werkbänke",
+          "feedback": "Rückmeldung",
+          "referenceTime": "Referenzzeit",
+          "presetTimeReferenceSlot": "Einstellen Referenzzeit",
+          "group": "Gruppe",
+          "upholsteryLine": "Polsterlinie",
+          "tbSeatFrame": "Tb Sitzgestell",
+          "colloquial": "Gemeinsprache",
+          "factorForNumberCalculation": "Faktor für Nummerkalkulation"
+        }
+      },
+      "materialOrigin": "Materialstamm",
+      "materialOriginDG": {
+        "materialOriginColumn": {
+          "lfdnrMaterial": "lfdnrMaterial",
+          "partNumber": "A-Sachnummer",
+          "designation": "Benennung",
+          "position": "Position",
+          "lfdnrCharacteristic": "lfdnrMerkmal",
+          "standardTimeInMinute": "standardTimeInMinute",
+          "vzko": "VZKO",
+          "VZBW": "VZBW",
+          "VZEL": "VZEL",
+          "VZAZ": "VZAZ",
+          "VZVS": "VZVS",
+          "VZMO": "VZMO",
+          "VZAL": "VZAL",
+          "VZGF": "VZGF",
+          "standart": "Standard",
+          "active": "Aktiv",
+          "createdBy": "Erstellt von",
+          "createdOn": "Erstellt an",
+          "alteredFrom": "Geändert von",
+          "changedOn": "Geändert an",
+          "bulkGood": "bulkGood",
+          "numberAdditionalShare": "numberAdditionalShare",
+          "background": "Hintergrund",
+          "foreground": "Vordergrund",
+          "posX": "posX",
+          "posY": "posY",
+          "picture": "Bild",
+          "acquisitionVariation": "acquisitionVariation",
+          "partNumberWithout": "partNumberWithout"
+        }
+      },
+      "additionalDisclosure": "Zusatzangabe",
+      "additionalDisclosureDG": {
+        "additionalDisclosureColumn": {
+          "LfdnrSpecification": "LFDNR Spezifikation",
+          "Specification": "Spezifikation",
+          "StandardTime": "Standard Zeit"
+        }
+      },
+      "matrix": "Matrix",
+      "user": "Benutzer",
+      "title": "Stammdaten Vorderseite",
+      "colourDG": {
+        "colourColumn": {
+          "colourId": "FarbenId",
+          "colourName": "Farbenname"
+        }
+      },
+      "rearSeatPan": "Sitzkassette",
+      "rearSeatPanDG": {
+        "rearSeatPanColumn": {
+          "rearSeatPanId": "Teilenummer",
+          "narrow": "Schmal",
+          "characteristic": "Merkmal",
+          "remark": "Bemerkung"
+        }
+      },
+      "wallConnection": "Wandanbindung",
+      "wallConnectionDG": {
+        "wallConnectionColumn": {
+          "wallConnectionId": "Teilenummer",
+          "characteristic": "Merkmal"
+        }
+      },
+      "chairFoot": "Stuhlfuss",
+      "chairFootDG": {
+        "chairFootColumn": {
+          "chairFootId": "Teilenummer",
+          "chairFootName": "Merkmal"
+        }
+      },
+      "lateralAdjustment": "EB Seitenverschiebung",
+      "lateralAdjustmentDG": {
+        "lateralAdjustmentColumn": {
+          "EB": "EB Nummer",
+          "Designation": "Bezeichnung",
+          "LateralAdjustmentLI": "Seitenverstellung links",
+          "LateralAdjustmentRE": "Seitenverstellung rechts",
+          "Gauge": "Schablone"
+        }
+      },
+      "belt": "EB Gurt",
+      "beltDG": {
+        "beltColumn": {
+          "EB": "EB Nummer",
+          "Designation": "Bezeichnung",
+          "Link": "Link",
+          "Right": "Rechts",
+          "Program": "Programm",
+          "DSCharacteristic": "DS Merkmal",
+          "NumberOfBack": "Anzahl Rücken",
+          "Arrangement": "Gruppierung",
+          "driver": "Fahrersitz",
+          "hostess": "Reisebegleitersitz",
+          "seatsfabric": "Sitzstoffe"
+        }
+      },
+      "sideCover": "Sesselblende",
+      "sideCoverDG": {
+        "sideCoverColumn": {
+          "PartNumber": "Teilenummer",
+          "Designation": "Bezeichnung",
+          "BeltAisleSide": "Gurt-Gangseitig",
+          "ArmRest": "Armlehne"
+        }
+      },
+      "adjustingLever": "Verstellhebel",
+      "adjustingLeverDG": {
+        "adjustingLeverColumn": {
+          "PartNumber": "Teilenummer",
+          "NumberOfBlocking": "Anzahl Blockierung",
+          "Designation": "Bezeichnung",
+          "Page": "Seite"
+        }
+      },
+      "backrestAdjustment": "Rückenlehnenverstellung",
+      "backrestAdjustmentDG": {
+        "backrestAdjustmentColumn": {
+          "eB": "EB",
+          "designation": "Bezeichnung",
+          "numberOfPnematicSpring": "Anzahl Gasfeder",
+          "pretenseLi": "Verstellung Li",
+          "pretenseRe": "Verstellung Re"
+        }
+      },
+      "stCharacteristic": "St Merkmal",
+      "stCharacteristicDG": {
+        "stCharacteristicColumn": {
+          "lfdnrCharacteristic": "LfdNr Merkmal",
+          "characteristic": "Merkmal",
+          "sort": "Sort",
+          "lfdnrPot": "Lfdnr Pot",
+          "cut": "Zuschnitt",
+          "stitching": "Näherei",
+          "specialSeat": "Sonderstuhl",
+          "montage": "Montage",
+          "issueCircus": "Ausgabe Rondell",
+          "materialRevelant": "Stoffrelevant"
+        }
+      },
+      "stMaterialMaster": "St Materialstamm",
+      "stMaterialMasterDG": {
+        "stMaterialMasterColumn": {
+          "partNumber": "TNR",
+          "designations": "Bezeichnung",
+          "lfdNrCharacteristic": "lfdNr Merkmal",
+          "active": "Aktiv",
+          "createdBy": "Angelegt Von",
+          "createdOn": "Angelegt Am",
+          "alteredFrom": "Geändert Von",
+          "changedOn": "Geändert Am",
+          "area": "Bereich",
+          "designationReport": "Berichtsbezeichnung ",
+          "issueLabel": "Ausgabe Etikett",
+          "columnReportSpecialSeat": "Spalte Bericht Sonderstuhl",
+          "issueReport": "Ausgabe Bericht Sonderstuhl",
+          "lineReportCircus": "Zeile Bericht Rondell",
+          "issueReportCircus": "Ausgabe Bericht Rondell",
+          "columnSSFNS": "Spalte SSFNS",
+          "issueSSFNS": "Ausgabe SSFNS",
+          "columnSSFS": "Spalte SSFS",
+          "issueSSFS": "Ausgabe SSFS",
+          "labelText": "Etiketten Text",
+          "uGR": "UGR",
+          "kSW": "KSW"
+        }
+      },
+      "remark": "Bemerkungen",
+      "remarkDG": {
+        "remarkColumn": {
+          "remark": "Bemerkungen"
+        }
+      },
+      "seatFrame":"EB Sitzgestell",
+      "seatFrameDG":{
+        "seatFrameColumn":{
+          "ebNumber":"EB",
+          "designation":"Bezeichnung",
+          "tnrSupportTube":"TNR Tragrohr",
+          "amount":"Menge",
+          "template":"Schablone",
+          "seatPitch":"Sitzabstand",
+          "page":"Seite",
+          "colorInfo":"Farbinfo",
+          "adapter":"Adapter"
+
+        }
+      }
+    }
+  },
+  "busmanagement": {
+    "busspecification": {
+      "bbnumber": "BB-Nr.",
+      "type": "Fahrzeugtyp",
+      "country": "Land",
+      "model": "Modell",
+      "vehicleseattype": "Stuhltyp",
+      "vehicledetails": "Bus Details",
+      "maininfo": "Bus Hauptinformation",
+      "seatsconditioning": "Sitze-Anlage",
+      "passenger": "Fahrgäste",
+      "driver": "Fahrersitz",
+      "hostess": "Reisebegleitersitz",
+      "seatsfabric": "Sitzstoffe",
+      "dynamicheader": "Komforkopfstütze",
+      "sitting": "Bestuhlung",
+      "sidearea": "Seiten Bereich",
+      "bellowsarea": "Faltenbalg Bereich",
+      "beltarea": "Gürtelbereich",
+      "backarea": "Heckbereich",
+      "rib": "Rippe",
+      "headerdynamic": "Komforkopfstütze",
+      "headerfastenertype": "Druckknopf/Klett",
+      "IMPORT_FILE": "Import Datei"
+    },
+    "busimport": {
+      "UPLOAD": "Laden",
+      "RECREATE": "Erneut erstellen",
+      "RETURN_TO_BUS_LIST": "Zurück zu Fahrzeugliste"
+    },
+    "busmasterdata": {
+      "STATION": "Station",
+      "WAREHOUSE": "Warehouse",
+      "datagridcolumns": {
+        "STATION_NUMBER": "Station Number",
+        "STATION_NAME": "Station Name",
+        "WAREHOUSE_NUMBER": "Warehouse Name"
+      }
+    },
+    "busmaterial": {
+      "UPLOAD": "Laden",
+      "stationslist": {
+        "UPDATE": "Aktualisieren"
+      },
+      "materiallist": {
+        "MATERIAL_NUMBER": "Materyal No",
+        "MATERIAL_NAME": "Materyal Adı",
+        "QUANTITY": "Miktar",
+        "UNIT": "Birim",
+        "WAREHOUSE_NUMBER": "Warehouse",
+        "UNNAMED_WAREHOUSE_NUMBER": "Unnamed Warehouse"
+      },
+      "materialadd": {
+        "ADD_MATERIAL": "Material Ekle",
+        "SAVE": "Kaydet",
+        "MATERIAL_NUMBER": "Materyal No",
+        "MATERIAL_NAME": "Materyal Adı",
+        "QUANTITY": "Miktar",
+        "UNIT": "Birim",
+        "SUB_GROUP_NUMBER": "Alt Grup No",
+        "STATION_NUMBER": "İstasyon Kodu"
+      }
+    }
+  },
+  "reports": {
+    "select": "Bitte Auswählen",
+    "upperdeck": "Oberdeck",
+    "lowerdeck": "Unterdeck",
+    "busreports": {
+      "bbnumber": "BB-Nummer",
+      "ordernumber": "Auftragsnummer",
+      "startdate": "Anfangsdatum",
+      "enddate": "Enddatum",
+      "customer": "Kunde",
+      "bustype": "Fahrzeugtyp",
+      "seattype": "Stuhltyp",
+      "tobedate": "Montagetermin",
+      "location": "Werk",
+      "totalreport": "Kollektiv Berichte",
+      "getreports": "Bericht",
+      "decktype": "Deckentyp",
+      "reporting": "Bericht"
+    },
+    "reportdetails": {
+      "reports": "Berichte",
+      "report": "Bericht",
+      "reportlogs": "Berichtslog",
+      "deck": "Deck",
+      "reportdate": "Berichtsdatum",
+      "reportuser": "Berichtsbenutzer",
+      "reporttypes": "Berichtsarten",
+      "testplans": "QS-Dokumente und Prüfpläne",
+      "printstatus": "Drucken Status",
+      "notprinted" : "Nicht Gedruckt",
+      "printed": "Gedruckt",
+      "bbnr": "BBNR",
+      "buttons": {
+        "cutting": "Zuschnitt",
+        "gessler": "Gessler",
+        "stitching": "Näherei",
+        "stitchingcurtain": "Näherei/Vorhang",
+        "montage": "Montage",
+        "extraseat": "Sonderstuhl",
+        "seatmask": "Sesselblenden",
+        "ugautomat": "UG-Automat",
+        "pushersaw": "Pushersäge",
+        "qsverification": "QS Nachweis",
+        "seatfoot": "Stuhlfuß",
+        "headpiping": "Kopfteil/Keder",
+        "labels": "Etiketten",
+        "overview": "Übersicht",
+        "labelc2": "Etiketten C2",
+        "KSW": "KSW",
+        "barcode": "Etiketten für Untergestell mit Barcode",
+        "press": "Drucken",
+        "preview": "Vorschau",
+        "presspreviewtype": "Drucken/Vorschau",
+        "testplan": "Prüfplan",
+        "aa5cutting": "AA5 Zuschnitt",
+        "aa6stitching": "AA6 Näherei",
+        "qs1extraseat": "QS1 Sonderstuhl",
+        "aa4upholstery": "AA4 Polsterei",
+        "qs4upholstery": "QS4 Polsterei",
+        "qs2assembly": "QS2 Zusammenbau",
+        "qs3fitting": "QS3 Einbau",
+        "reportdirectprint": "Berichte direkt DRUCKEN",
+        "selectallreports": "Wählen Sie Alle"
+      }
+    }
+  },
+  "general": {
+    "akveo": "Akveo",
+    "home": "Zuhause",
+    "forms": {
+      "option1": "Option 1"
+    },
+    "menu": {
+      "bant1tepsi1": "Tape1Trace1",
+      "dashboard": "Instrumententafel",
+      "editors": "Editors",
+      "ck_editor": "CKEditor",
+      "components": "Components",
+      "tree_view": "Tree View",
+      "charts": "Charts",
+      "chartist_js": "Chartist.Js",
+      "ui_features": "UI Features",
+      "typography": "Typography",
+      "buttons": "Buttons",
+      "icons": "Icons",
+      "modals": "Modals",
+      "grid": "Grid",
+      "form_elements": "Form Elements",
+      "form_inputs": "Form Inputs",
+      "form_layouts": "Form Layouts",
+      "tables": "Tables",
+      "basic_tables": "Basic Tables",
+      "smart_tables": "Smart Tables",
+      "maps": "Maps",
+      "google_maps": "Google Maps",
+      "leaflet_maps": "Leaflet Maps",
+      "bubble_maps": "Bubble Maps",
+      "line_maps": "Line Maps",
+      "pages": "Pages",
+      "login": "Login",
+      "register": "Register",
+      "menu_level_1": "Menu Level 1",
+      "menu_level_1_1": "Menu Level 1.1",
+      "menu_level_1_2": "Menu Level 1.2",
+      "menu_level_1_2_1": "Menu Level 1.2.1",
+      "external_link": "External Link"
+    },
+    "created_with": "Created with"
+  },
+  "dashboard": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "signout": "Sign Out",
+    "welcome": " Willkommen",
+    "message": " Willkommen bei Mercedes Benz Sitz Automatisierungswerkzeug ",
+    "dailyproductionstatus": "TÃ¤glich Produktion Status",
+    "producted": "Fertiggestellt",
+    "fault": "Fehlgeschlagen",
+    "trace1": "Band 1",
+    "trace2": "Band 2",
+    "trace3": "Band 3",
+    "totalproduction": "Gesamt Produktion",
+    "weeklyproductionstatus": "WÃ¶chentlich Produktion Pro Band",
+    "language": "Bitte Sprache AuswÃ¤hlen",
+    "acquisition_channels": "Acquisition Channels",
+    "users_by_country": "Users by Country",
+    "revenue": "Revenue",
+    "feed": "Feed",
+    "todo_list": "To Do List",
+    "calendar": "Calendar",
+    "new_visits": "New Visits",
+    "purchases": "Purchases",
+    "active_users": "Active Users",
+    "returned": "Returned",
+    "popular_app": {
+      "super_app": "Super App",
+      "most_popular_app": "Most Popular App",
+      "total_visits": "Total Visits",
+      "new_visits": "New Visits",
+      "sales": "Sales"
+    },
+    "todo": {
+      "task_todo": "Task to do.."
+    },
+    "traffic_chart": {
+      "view_total": "Views Total"
+    }
+  },
+  "tree_view": {
+    "title": "basic",
+    "programming": "Programming languages by programming paradigm",
+    "oop": "Object-oriented programming",
+    "java": "Java",
+    "c_plus_plus": "C++",
+    "c_sharp": "C#",
+    "prototype": "Prototype-based programming",
+    "java_script": "JavaScript",
+    "coffee_script": "CoffeeScript",
+    "lua": "Lua"
+  },
+  "chart": {
+    "lines": "Lines",
+    "bars": "Bars",
+    "simple_line_chart": "Simple line chart",
+    "line_chart": "Line chart with area",
+    "bi_polar_line_chart": "Bi-polar line chart with area only",
+    "simple_bar_chart": "Simple bar chart",
+    "multi_line_labels_bar_chart": "Multi-line labels bar chart",
+    "stacked_bar_chart": "Stacked bar chart",
+    "pies_and_donuts": "Pies & Donuts",
+    "simple_pie": "Simple Pie",
+    "pie_with_labels": "Pie with labels",
+    "donut": "Donut"
+  },
+  "editorder": {
+    "ordernumber": "Auftragsnummer",
+    "bbmin": "BBNr min",
+    "bbmax": "BBNr max",
+    "comment": "Kommentar",
+    "status": "Status",
+    "filter":"Filter",
+    "editOrderDetailsDG":{
+      "orderDetails":"Bestell Details",
+      "orderNumber": "Auftragsnummer",
+      "bbmin": "BBNr min",
+      "bbmax": "BBNr max",
+      "comment": "Kommentar",
+      "status": "Status",
+      "workingUnit":"Arbeitseinheit"
+    }
+  }
+}

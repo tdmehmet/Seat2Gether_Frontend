@@ -1,0 +1,12 @@
+<table (scroll)="true" width="100%">
+  <ng2-smart-table  *ngIf="datagridVisible"
+                    [settings]="ng2TableSettings"
+                    [source]="dataSource"
+                    (editConfirm)="onDGEditConfirm($event)"
+                    (deleteConfirm)="onDGDeleteConfirm($event)"
+                    (createConfirm)="onDGCreateConfirm($event)">
+  </ng2-smart-table>
+</table>
+  <div [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }"></div>
+
+

@@ -1,0 +1,489 @@
+<div class="alert alert-success">
+  <div class="row">
+    <div class="col-md-6">
+      <a [routerLink]="['../../busdetail', bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-eye"></li>
+      </a>
+      <a [routerLink]="['../../busmaterial',bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-server"></li>
+      </a>
+      <a [routerLink]="['../../busseat', bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-bus"></li>
+      </a>
+    </div>
+    <div class="col-md-6 text-right">
+      <span style="font-size: 20px; font-weight: bold">{{bbNumber}}</span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <ba-card [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }"
+    title=" {{'busmanagement.busspecification.maininfo' | translate }}" baCardClass="with-scroll">
+    <div style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'external.busmanagement.busdetail.VEHICLE_DETAILS' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+
+        <div class="col-md-3">
+          <label for="bbNumber">{{'external.busmanagement.busdetail.BB_NUMBER' | translate}}</label>
+          <input type="text" [ngModel]="selectedVehicle.bbNumber" class="form-control" id="bbNumber" disabled="true" placeholder="{{'external.busmanagement.busdetail.BB_NUMBER' | translate}}">
+        </div>
+        <div class="col-md-3">
+          <label for="vehicleModelX">{{'external.busmanagement.busdetail.MODEL' | translate}}</label>
+          <combo-box [localFilterCaseSensitive]="false" (onSelect)="vehicleModelSelect($event)" id="vehicleModelX" [listData]="vehicleModelList"
+            [displayField]="displayField" [valueField]="'id'" [(ngModel)]="selectedVehicle.modelId" [forceSelection]="true"
+            [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+
+        <div class="col-md-3">
+          <label for="vehicleType">{{'external.busmanagement.busdetail.TYPE' | translate}}</label>
+          <combo-box #vehicleType [disabled]="true" [localFilterCaseSensitive]="false" id="vehicleType" [listData]="vehicleTypeList"
+            [displayField]="displayField" [valueField]="'id'" [(ngModel)]="selectedVehicle.typeId" [forceSelection]="true"
+            [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-3">
+          <label for="country">{{'external.busmanagement.busdetail.COUNTRY' | translate}}</label>
+          <!-- <input type="text" [(ngModel)]="selectedVehicle.country" class="form-control" id="country" placeholder="{{'busmanagement.busspecification.country' | translate}}"> -->
+          <combo-box [localFilterCaseSensitive]="false" id="country" [listData]="countryList" [displayField]="'tr'" [valueField]="'id'"
+            [(ngModel)]="selectedVehicle.countryId" [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'"
+            [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')" [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [editable]="true">
+          </combo-box>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+
+        <div class="col-md-3">
+          <label for="">{{'external.busmanagement.busdetail.BAND_RECIVE_DATE' | translate}}</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" (ngModelChange)="dateChanged($event)" [(ngModel)]="tmpDate"
+              ngbDatepicker #d="ngbDatepicker">
+            <button class="input-group-addon" (click)="d.toggle()" type="button">
+              <i class="fa fa-calendar"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="country">{{'external.busmanagement.busdetail.KW_INFO' | translate}}</label>
+          <input type="text" [disabled]="true" [ngModel]="selectedVehicle.kwInfo" class="form-control" id="kwInfo">
+        </div>
+        <div class="col-md-3">
+          <label for="country">{{'external.busmanagement.busdetail.SEATS_CONDITIONING_PICTURE' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicle.seatsConditioningPicture" class="form-control" id="seatsConditioningPicture"
+            placeholder="{{'external.busmanagement.busdetail.SEATS_CONDITIONING_PICTURE' | translate}}">
+        </div>
+        <div class="col-md-3">
+          <label for="vehicleSeatType">{{'external.busmanagement.busdetail.VEHICLE_SEAT_TYPE' | translate}}</label>
+          <combo-box id="vehicleSeatType" [listData]="vehicleSeatTypeList" [displayField]="displayField" [valueField]="'id'" [(ngModel)]="selectedVehicle.seatType"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-3">
+          <label for="seatCount">{{'external.busmanagement.busdetail.PASSENGER_SEAT_COUNT' | translate}}</label>
+          <input type="number" [(ngModel)]="selectedVehicle.seatCount" class="form-control" id="seatCount" placeholder="Yolcu Koltuk Adedi">
+        </div>
+        <div class="col-md-3">
+          <label for="hostessSeatType">{{'external.busmanagement.busdetail.HOSTESS_SEAT_TYPE' | translate}}</label>
+          <combo-box id="hostessSeatType" [listData]="hostessSeatTypeList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.hostessSeatCount"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-3">
+          <label for="backRowSeatType">{{'external.busmanagement.busdetail.BACK_ROW_SEAT_TYPE' | translate}}</label>
+          <combo-box id="backRowSeatType" [listData]="backRowSeatTypeList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.backRowSeatCount"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-3">
+          <label for="backRowSeatPicture">{{'external.busmanagement.busdetail.BACK_ROW_SEAT_PICTURE' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicle.backRowSeatPicture" class="form-control" id="backRowSeatPicture" placeholder="{{'external.busmanagement.busdetail.BACK_ROW_SEAT_PICTURE' | translate}}">
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'external.busmanagement.busdetail.SEATING_FABRICS' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="passengerSitting">{{'external.busmanagement.busdetail.PASSENGER_SITTING' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.passengerSitting"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="passengerLateral">{{'external.busmanagement.busdetail.PASSENGER_LATERAL' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.passengerLateral"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="passengerBellows">{{'external.busmanagement.busdetail.PASSENGER_BELLOWS' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.passengerBellows"></app-s2gselect>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="passengerBrush">{{'external.busmanagement.busdetail.PASSENGER_BRUSH' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.passengerBrush"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="passengerOutBack">{{'external.busmanagement.busdetail.PASSENGER_OUT_BACK' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.passengerOutBack"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="passengerHead">{{'external.busmanagement.busdetail.PASSENGER_HEAD' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.passengerHead"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="passengerWick">{{'external.busmanagement.busdetail.PASSENGER_WICK' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.passengerWick"></app-s2gselect>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'external.busmanagement.busdetail.PORTABLE_HEAD' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="portableHeadFastener">{{'external.busmanagement.busdetail.PORTABLE_HEAD_FASTENER' | translate}}</label>
+          <combo-box id="portableHeadFastener" [listData]="portableHeadFastenerList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.portableHeadFastener"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-4">
+          <label for="portableHeadPortableFixed">{{'external.busmanagement.busdetail.PORTABLE_HEAD_PORTABLE_FIXED' | translate}}</label>
+          <combo-box id="portableHeadPortableFixed" [listData]="portableHeadPortableFixedList" [displayField]="'tr'" [valueField]="'id'"
+            [(ngModel)]="selectedVehicle.portableHeadPortableFixed" [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'"
+            [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')" [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-4">
+          <label for="portableHeadPortableFixedFabric">{{'external.busmanagement.busdetail.PORTABLE_HEAD_PORTABLE_FIXED_FABRIC' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.portableHeadPortableFixedFabric"></app-s2gselect>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'external.busmanagement.busdetail.CURTAINS' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="curtainFirstFabric">{{'external.busmanagement.busdetail.CURTAIN_FIRST_FABRIC' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.curtainFirstFabric"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="curtainSecondFabric">{{'external.busmanagement.busdetail.CURTAIN_SECOND_FABRIC' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.curtainSecondFabric"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="doorType">{{'external.busmanagement.busdetail.DOOR_TYPE' | translate}}</label>
+          <combo-box id="doorType" [listData]="doorTypeList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.doorType"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+      </div>
+      <div class="row col-md-12">
+        <div class="col-md-4">
+          <label for="driverSleepingQuarter">{{'external.busmanagement.busdetail.DRIVER_BACK_CURTAIN_FABRIC' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.driverBackCurtainFabric"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="driverSleepingQuarter">{{'external.busmanagement.busdetail.DRIVER_SLEEPING_QUARTER' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.driverSleepingQuarter"></app-s2gselect>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'external.busmanagement.busdetail.DRIVER_SEAT' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="driverSitting">{{'external.busmanagement.busdetail.DRIVER_SITTING' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.driverSitting"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="driverLateral">{{'external.busmanagement.busdetail.DRIVER_LATERAL' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.driverLateral"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="driverFace">{{'external.busmanagement.busdetail.DRIVER_FACE' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.driverFace"></app-s2gselect>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="driverOutBack">{{'external.busmanagement.busdetail.DRIVER_OUT_BACK' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.driverOutBack"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="driverHead">{{'external.busmanagement.busdetail.DRIVER_HEAD' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.driverHead"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="driverArmrest">{{'external.busmanagement.busdetail.DRIVER_ARMREST' | translate}}</label>
+          <combo-box id="driverArmrest" [listData]="driverArmrestList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.driverArmrest"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="driverHeating">{{'external.busmanagement.busdetail.DRIVER_HEATING' | translate}}</label>
+          <combo-box id="driverHeating" [listData]="driverHeatingList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.driverHeating"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-4">
+          <label for="driverVibration">{{'external.busmanagement.busdetail.DRIVER_VIBRATION' | translate}}</label>
+          <combo-box id="driverVibration" [listData]="driverVibrationList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.driverVibration"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-4">
+          <label for="driverMercedesStar">{{'external.busmanagement.busdetail.DRIVER_MERCEDES_STAR' | translate}}</label>
+          <combo-box id="driverMercedesStar" [listData]="driverMercedesStarList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.driverMercedesStar"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'external.busmanagement.busdetail.HOSTESS_SEAT' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-4">
+          <label for="hostessHead">{{'external.busmanagement.busdetail.HOSTESS_HEAD' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.hostessHead"></app-s2gselect>
+        </div>
+        <div class="col-md-4">
+          <label for="hostessElectrical">{{'external.busmanagement.busdetail.HOSTESS_ELECTRICAL' | translate}}</label>
+          <combo-box id="hostessElectrical" [listData]="hostessElectricalList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.hostessElectrical"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-4">
+          <label for="hostessLock">{{'external.busmanagement.busdetail.HOSTESS_LOCK' | translate}}</label>
+          <combo-box id="hostessLock" [listData]="hostessLockList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.hostessLock"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'external.busmanagement.busdetail.NET' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-6">
+          <label for="netType">{{'external.busmanagement.busdetail.NET_TYPE' | translate}}</label>
+          <combo-box id="netType" [listData]="netTypeList" [displayField]="'tr'" [valueField]="'id'" [(ngModel)]="selectedVehicle.netType"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+        <div class="col-md-6">
+          <label for="netFabricCode">{{'external.busmanagement.busdetail.NET_FABRIC_CODE' | translate}}</label>
+          <app-s2gselect [gridData]="vehicleSeatFabricTypeList" [(ngModel)]="selectedVehicle.netFabricCode"></app-s2gselect>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+
+
+
+    <div class="row col-md-12">
+      <button type="button" (click)="saveBus()" class="btn btn-success">
+          {{'external.busmanagement.busdetail.SAVE' | translate}}
+      </button>
+      <span style="padding-left: 5px"></span>
+      <button type="button" (click)="saveBusAndContinue()" class="btn btn-success">
+          {{'external.busmanagement.busdetail.SAVE_AND_CONTINUE' | translate}}
+      </button>
+    </div>
+    <br>
+
+
+
+
+    <div *ngIf="false" style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'busmanagement.busspecification.seatsconditioning' | translate}}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12">
+        <div class="col-md-3">
+          <label for="vehicleSeatType">{{'busmanagement.busspecification.vehicleseattype' | translate}}</label>
+          <combo-box id="vehicleSeatType" [listData]="vehicleSeatTypeList" [displayField]="displayField" [valueField]="'id'" [(ngModel)]="selectedVehicleSeatMainInfo.seatType"
+            [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="true">
+          </combo-box>
+        </div>
+
+        <div class="col-md-3">
+          <label for="passenger">{{'busmanagement.busspecification.passenger' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatMainInfo.passenger" class="form-control" id="passenger" placeholder="{{'busmanagement.busspecification.passenger' | translate}}">
+        </div>
+
+        <div class="col-md-3">
+          <label for="driver">{{'busmanagement.busspecification.driver' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatMainInfo.driverSeatCount" class="form-control" id="driver" placeholder="{{'busmanagement.busspecification.driver' | translate}}">
+        </div>
+
+        <div class="col-md-3">
+          <label for="hostess">{{'busmanagement.busspecification.hostess' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatMainInfo.hostess" class="form-control" id="hostess" placeholder="{{'busmanagement.busspecification.hostess' | translate}}">
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div *ngIf="false" style="border: 1px solid gray">
+      <br>
+      <div class="row col-md-12 ">
+
+        <div class="col-md-12">
+
+          <br>
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'busmanagement.busspecification.seatsfabric' | translate}}</label>
+
+
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-12">
+
+
+        <div class="col-md-2">
+          <label for="sittingarea">{{'busmanagement.busspecification.sitting' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatFabric.sittingArea" class="form-control" id="sittingarea" placeholder="{{'busmanagement.busspecification.sitting' | translate}}">
+        </div>
+
+        <div class="col-md-2">
+          <label for="sidearea">{{'busmanagement.busspecification.sidearea' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatFabric.sideArea" class="form-control" id="sidearea" placeholder="{{'busmanagement.busspecification.sidearea' | translate}}">
+        </div>
+
+        <div class="col-md-2">
+          <label for="bellowsarea">{{'busmanagement.busspecification.bellowsarea' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatFabric.bellowsArea" class="form-control" id="bellowsarea" placeholder="{{'busmanagement.busspecification.bellowsarea' | translate}}">
+        </div>
+
+        <div class="col-md-2">
+          <label for="beltarea">{{'busmanagement.busspecification.beltarea' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatFabric.beltArea" class="form-control" id="beltarea" placeholder="{{'busmanagement.busspecification.beltarea' | translate}}">
+        </div>
+
+        <div class="col-md-2">
+          <label for="backarea">{{'busmanagement.busspecification.backarea' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatFabric.backArea" class="form-control" id="backarea" placeholder="{{'busmanagement.busspecification.backarea' | translate}}">
+        </div>
+
+        <div class="col-md-2">
+          <label for="rib">{{'busmanagement.busspecification.rib' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatFabric.rib" class="form-control" id="rib" placeholder="{{'busmanagement.busspecification.rib' | translate}}">
+        </div>
+      </div>
+      <div class="row col-md-12 ">
+        <div class="col-md-12">
+
+          <br>
+          <label style="font-size:24px;font-family:verdana;color:#000000;">{{'busmanagement.busspecification.dynamicheader' | translate}}</label>
+
+        </div>
+      </div>
+      <br>
+      <div class="row col-md-8 ">
+
+        <div class="col-md-6">
+          <label for="headerdynamic">{{'busmanagement.busspecification.headerdynamic' | translate}}</label>
+          <input type="text" [(ngModel)]="selectedVehicleSeatFabric.headerDynamic" class="form-control" id="headerdynamic" placeholder="{{'busmanagement.busspecification.headerdynamic' | translate}}">
+        </div>
+        <div class="col-md-6">
+          <label for="headerfastenertype">{{'busmanagement.busspecification.headerfastenertype' | translate}}</label>
+          <combo-box id="headerfastenertype" [listData]="vehicleSeatHeaderFastenerTypeList" [displayField]="displayField" [valueField]="'id'"
+            [(ngModel)]="selectedVehicleSeatFabric.headerFastenerType" [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'"
+            [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')" [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [editable]="true">
+          </combo-box>
+        </div>
+
+        <br>
+      </div>
+      <br>
+    </div>
+    <br>
+
+  </ba-card>
+
+</div>
+<errormodal #errormodal></errormodal>
+<successmodal #successmodal></successmodal>

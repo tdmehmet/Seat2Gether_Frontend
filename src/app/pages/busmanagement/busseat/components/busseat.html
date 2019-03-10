@@ -1,0 +1,141 @@
+<div class="alert alert-success">
+  <div class="row">
+    <div class="col-md-6">
+      <a [routerLink]="['../../busdetail', bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-eye"></li>
+      </a>
+      <a [routerLink]="['../../busmaterial',bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-server"></li>
+      </a>
+      <a [routerLink]="['../../busseat', bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-bus"></li>
+      </a>
+    </div>
+    <div class="col-md-6 text-right">
+      <span style="font-size: 20px; font-weight: bold">{{bbNumber}}</span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <td class="text-center sofor" [class.selected]="isSeatSelected('S')" (mouseover)="selectSeatMouseOver($event,'S')" (click)="selectSeat('S')">S
+            <span class="hasMaterial" *ngIf="getSeatMaterialCount('S') > 0">({{getSeatMaterialCount('S')}})</span>
+        </td>
+        <td class="text-center hostes" [class.selected]="isSeatSelected('H1')" (mouseover)="selectSeatMouseOver($event,'H1')" (click)="selectSeat('H1')">H1
+            <span class="hasMaterial" *ngIf="getSeatMaterialCount('H1') > 0">({{getSeatMaterialCount('H1')}})</span>
+        </td>
+        <td class="text-center hostes" [class.selected]="isSeatSelected('H2')" (mouseover)="selectSeatMouseOver($event,'H2')" (click)="selectSeat('H2')">H2
+            <span class="hasMaterial" *ngIf="getSeatMaterialCount('H2') > 0">({{getSeatMaterialCount('H2')}})</span>
+        </td>
+      </tr>
+    </table>
+    <table class="table table-bordered table-striped">
+      <tr *ngFor="let row of seatRows; let c = index">
+        <td *ngFor="let column of seatColumns; let r = index" [class.selected]="isSeatSelected(column+row)" (mouseover)="selectSeatMouseOver($event,column+row)"
+          (click)="selectSeat(column+row)" class="seat koltuk text-center">{{column + row}}
+          <span class="hasMaterial" *ngIf="getSeatMaterialCount(column+row) > 0">({{getSeatMaterialCount(column+row)}})</span>
+        </td>
+      </tr>
+    </table>
+    <table class="table table-bordered table-striped">
+      <tr>
+        <td class="text-center backseat">X1</td>
+        <td class="text-center backseat">X2</td>
+        <td class="text-center backseat">X3</td>
+        <td class="text-center backseat">X4</td>
+        <td class="text-center backseat">X5</td>
+      </tr>
+    </table>
+    <div>
+      <div>Seçilen Koltuk Sayısı: {{selectedSeatList.length}}</div>
+      <hr>
+      <div>
+        <input type="checkbox" name="multiSelect" id="multiSelect" [(ngModel)]="multiSelect" (click)="multiSelectChanged()" /> Çoklu
+        <input type="checkbox" name="moveSelect" id="moveSelect" [(ngModel)]="moveSelect" (click)="moveSelectChanged()" /> Sürükle
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <button *ngIf="this.seatMaterialList.length > 0" class="btn btn-danger btn-block btn-sm" (click)="removeAllSeatMaterial()">Tüm Atamaları Kaldır</button>
+        </div>
+        <div class="col-md-6">
+          <button *ngIf="this.seatMaterialList.length > 0" class="btn btn-success btn-block btn-sm" (click)="removeAllSeatMaterial()">Atamaları Tamamla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div *ngIf="this.selectedSeatList.length > 0">
+      <table class="table table-striped table-bordered">
+        <tr *ngFor="let material of materialList" [ngClass]="{'bg-danger': material.quantity < 0}">
+          <td>{{material.materialNumber}}</td>
+          <td>{{material.materialName}}</td>
+          <td>{{material.quantityReadOnly}}</td>
+          <td>{{material.quantity}}</td>
+          <td>
+            <button class="btn btn-info btn-sm" (click)="addMaterialToSeat(material)">+</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="false" class="col-md-3">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <td colspan="2" class="text-center sofor">Şoför</td>
+        <td class="text-center hostes">H1</td>
+        <td class="text-center hostes">H2</td>
+      </tr>
+      <tr *ngFor="let row of seatRows; let c = index">
+        <td [class.selected]="isSeatSelected(column+row)" (click)="selectSeat(c,r,column+row)" class="seat koltuk text-center" *ngFor="let column of seatColumns; let r = index">{{column + row}}
+          <span class="hasMaterial" *ngIf="getSeatMaterialCount(column+row) > 0">({{getSeatMaterialCount(column+row)}})</span>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+    <div style="padding-top:5px">
+      <div>Seçilen Koltuk Sayısı: {{selectedSeatList.length}}</div>
+      <hr>
+      <div>
+        <input type="checkbox" name="multiSelect" id="multiSelect" [(ngModel)]="multiSelect" (click)="multiSelectChanged()" /> Çoklu Seçim</div>
+      <div>
+        <hr>
+        <button *ngIf="this.seatMaterialList.length > 0" class="btn btn-danger btn-sm" (click)="removeAllSeatMaterial()">Tüm Atamaları Kaldır</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-bordered">
+      <tr *ngFor="let seatMaterial of getSelectedSeatMaterialList(); let i = index">
+        <td>{{seatMaterial.materialNumber}}</td>
+        <td>{{seatMaterial.materialName}}</td>
+        <td>{{seatMaterial.seatCode}}</td>
+        <td>{{seatMaterial.quantity}}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="removeMaterialFromSeat(seatMaterial)">-</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- <div class="card" *ngFor="let item of getGrouppedAllSeatMaterial()">
+      <div class="card-header">{{item.p}}</div>
+      <div class="card-content">
+        <table class="table table-striped table-bordered">
+          <tr *ngFor="let seatMaterial of item.v; let i = index">
+            <td>{{seatMaterial.id}}</td>
+            <td>{{seatMaterial.name}}</td>
+            <td>{{seatMaterial.quantity}}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="removeMaterialFromSeat(seatMaterial)">-</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div> -->

@@ -1,0 +1,41 @@
+<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+     [ngClass]="{scrolled: isScrolled}">
+  <a routerLink="/pages/dashboard" class="al-logo clearfix">
+    <img src="assets/img/s2g/s2g_logo_transparent_small.png"/>
+  </a>
+
+  <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon">...</a>
+    <div class="user-profile clearfix">
+      <div class="dropdown al-user-profile">
+        <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown"
+           aria-expanded="false">
+           <span></span>
+        </a>
+        <ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
+          <li><label>{{getUserName()}}</label></li>
+          <li class="dropdown-item"><a href=""><i class="fa fa-user"></i>{{'dashboard.profile' | translate}}</a></li>
+          <li class="dropdown-item"><a href=""><i class="fa fa-cog"></i>{{'dashboard.settings' | translate}}</a></li>
+          <li class="dropdown-item"><a href="" (click)="logout()" class="signout"><i class="fa fa-power-off"></i>{{'dashboard.signout'
+            | translate}}</a></li>
+        </ul>
+      </div>
+      <ba-msg-center></ba-msg-center>
+    </div>
+    <div class="user-profile clearfix">
+      <div class="dropdown al-user-profile">
+        <a class="profile-toggle-link dropdown-toggle" id="language-dd" data-toggle="dropdown" aria-expanded="false">
+          <img src="../../../../assets/img/lang.jpg" (error)="this.src='assets/img/theme/no-photo.png'">
+        </a>
+        <ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-language-dd">
+          <!--<li><label>{{'dashboard.language' | translate}}</label></li>-->
+          <li class="dropdown-item"><a href="" (click)="changeLang('en')">English</a></li>
+          <li class="dropdown-item"><a href="" (click)="changeLang('de')">Deutsch</a></li>
+          <li class="dropdown-item"><a href="" (click)="changeLang('tr')">Türkçe</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+
+
+</div>

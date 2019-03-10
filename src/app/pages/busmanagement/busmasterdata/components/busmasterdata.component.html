@@ -1,0 +1,16 @@
+<div class="form-group">
+  <ba-card title=" " baCardClass="with-scroll">
+    <div class="row col-mb-12">
+      <div class="col-md-4">
+        <combo-box [listData]="buttonList" [displayField]="'buttonName'" [valueField]="'buttonValue'" [(ngModel)]="selectedButton"
+          [forceSelection]="true" [localFilter]="true" [inputClass]="'form-control'" [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+          [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')" [editable]="false" (onSelect)="initializeDataGrid($event);">
+        </combo-box>
+      </div>
+    </div>
+    <br>
+    <seat2gether-editable-data-grid class="row col-md-12" #editableDataGrid></seat2gether-editable-data-grid>
+  </ba-card>
+</div>
+<errormodal #errormodal></errormodal>
+<successmodal #successmodal></successmodal>

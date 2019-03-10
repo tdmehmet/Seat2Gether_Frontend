@@ -1,0 +1,30 @@
+<div class="alert alert-info">
+  <div class="row">
+    <div class="col-md-7" [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }">
+      <input type="file" (change)="selectedFileChange($event)" #fileInput placeholder="Upload file..." />
+    </div>
+    <div class="col-md-5 text-right">
+      <button *ngIf="selectedFile" class="btn btn-warning" [disabled]="isLoading || isSaving" [ngClass]="{'m-progress':isLoading}"
+        (click)="importExportedFile()">{{'external.busmanagement.busimport.UPLOAD' | translate}}</button>
+      <button class="btn btn-success" [routerLink]="['../busspecification']">{{'external.busmanagement.busimport.RETURN_TO_BUS_LIST' | translate}}</button>
+    </div>
+    <div *ngIf="importResults" class="col-md-12">
+      <table class="table table-stripped table-bordered">
+        <tr *ngFor="let importResult of importResults">
+          <td>{{importResult.bbNumber}}</td>
+          <td>
+            <div *ngIf="importResult.created; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <i style="color:green" class="fa fa-2x fa-check-circle-o" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template #elseBlock>
+              <button class="btn btn-success" [disabled]="isSaving" (click)="recreateMaterials(importResult)">
+                {{'external.busmanagement.busimport.RECREATE' | translate}}
+              </button>
+            </ng-template>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

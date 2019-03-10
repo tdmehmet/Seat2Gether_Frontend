@@ -1,0 +1,23 @@
+<div class="card" *ngFor="let station of stationList">
+  <div class="card-header text-white" [ngClass]="station.stationName ? 'bg-primary' : 'bg-danger'">
+    {{station.stationNumber}} -
+    <span *ngIf="!station.editable; else elseBlock">
+      {{station.stationName}}
+      <button class="btn btn-sm btn-success" (click)="station.editable = !station.editable">
+        <i class="fa fa-edit"></i>
+      </button>
+    </span>
+    <ng-template #elseBlock>
+      <input type="text" [(ngModel)]="station.stationName">
+      <button class="btn btn-sm btn-success" (click)="updateStationName(station)">
+        <i class="fa fa-refresh"></i>
+      </button>
+      <button class="btn btn-sm btn-warning" (click)="station.editable = !station.editable">
+        <i class="fa fa-close"></i>
+      </button>
+    </ng-template>
+  </div>
+  <div class="card-content" style="margin:7px;">
+    <app-material-list class="col-md-12" [materialList]="station.materialList"></app-material-list>
+  </div>
+</div>

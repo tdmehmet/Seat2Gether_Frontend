@@ -1,0 +1,33 @@
+<div class="row col-md-5">
+<modal #errormodal>
+  <modal-header class="bg-danger">
+    <h4 class="modal-title">
+      {{'modal.error' | translate}}
+    </h4>
+  </modal-header>
+  <modal-body >
+    <div id="userErrorText">
+      {{seat2GetherError.message +", "+ seat2GetherError.exceptionMessage}}
+    </div>
+  </modal-body>
+  <modal-body *ngIf="!errorDetailHidden">
+    <div>
+        <b>Message</b> : {{seat2GetherError.message}}
+        <br>
+        <b>Exception Message</b> : {{seat2GetherError.exceptionMessage}}
+        <br>
+        <b>Exception Type</b> : {{seat2GetherError.exceptionType}}
+        <br>
+        <b>Stack Trace</b> : {{ seat2GetherError.stackTrace }}
+    </div>
+  </modal-body>
+  <modal-footer>
+    <div class="button-wrapper">
+      <button type="button" class="btn btn-success" id="btnViewDetailsModal" (click)="viewDetails()" *ngIf="errorDetailHidden">{{'modal.detail.show' | translate}}</button>
+      <button type="button" class="btn btn-success" id="btnHideDetailsModal" (click)="hideDetails()" *ngIf="!errorDetailHidden" >{{'modal.detail.hide' | translate}}</button>
+      <button type="button" class="btn btn-danger" id="btnCloseErrorModal" (click)="closeErrorModal()">{{'modal.close' | translate}}</button>
+    </div>
+  </modal-footer>
+</modal>
+
+</div>

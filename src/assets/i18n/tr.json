@@ -1,0 +1,630 @@
+{
+  "login": {
+    "title": "SEAT2GETHER",
+    "username": "Kullanıcı",
+    "password": "Şifre",
+    "sign_in": "Giriş",
+    "invalidcredientials": "Hatalı kullanıcı veya şifre",
+    "systemerror": "Sistem Hatası : "
+  },
+  "modal": {
+    "error": "Hata",
+    "success": "İşlem Tamamlandı",
+    "busyMessage": "Lütfen Bekleyiniz",
+    "close": "Kapat",
+    "systemerror": "Sistem Hatası : ",
+    "detail": {
+      "show": "Detay Göster",
+      "hide": "Detay Gizle"
+    },
+    "search": "Listede Ara"
+  },
+  "ng2datagrid": {
+    "column": {
+      "title": {
+        "action": "İşlemler"
+      }
+    }
+  },
+  "usermanagement": {
+    "rolebinding": {
+      "username": "Kullanıcı Adı",
+      "personnelName": "Personel Adı",
+      "personnelSurname": "Personel Soyadı",
+      "searchheader": "Kullanıcı Arama Krİterlerİ",
+      "email": "Email",
+      "phoneNumber": "Telefon Numarası",
+      "close": "Kapat",
+      "filter": "Listele",
+      "dateCreated": "İşe Başlama Tarihi",
+      "userdetails": "Kullanıcı Detayları",
+      "save": "Kaydet",
+      "roleId": "Rol Id",
+      "roleName": "Rol Adı",
+      "successSaveText": "Kullanıcı Rol Eşleştirmesi Başarıyla Tamamlandı",
+      "reset": "Temizle"
+    }
+  },
+  "busmanagement": {
+    "busspecification": {
+      "bbnumber": "Araç Numarası",
+      "type": "Tip",
+      "country": "Ülke",
+      "model": "Model",
+      "vehicleseattype": "Koltuk Tipi",
+      "vehicledetails": "Otobüs Detayları",
+      "maininfo": "Otobüs Ana Bilgileri",
+      "seatsconditioning": "Koltuklandırma Bilgileri",
+      "seatsfabric": "Koltuklandırma Kumaşları",
+      "dynamicheader": "Seyyar Başlık",
+      "passenger": "Yolcu",
+      "driver": "Şoför",
+      "hostess": "Hostes",
+      "sitting": "Oturma",
+      "sidearea": "Yan Parça",
+      "bellowsarea": "Körük",
+      "beltarea": "Façası",
+      "backarea": "Arkası",
+      "rib": "Fitil",
+      "headerdynamic": "Seyyar",
+      "headerfastenertype": "Çıtçıt/Cırt"
+    }
+  },
+  "reports": {
+    "select": "Lütfen Seçiniz",
+    "upperdeck": "Üst Tavan",
+    "lowerdeck": "Alt Tavan",
+    "busreports": {
+      "bbnumber": "BB No",
+      "ordernumber": "Sipariş Numarası",
+      "startdate": "Başlangıç Tarihi",
+      "enddate": "Bitiş Tarihi",
+      "customer": "Müşteri",
+      "bustype": "Otobüs Tipi",
+      "seattype": "Koltuk Tipi",
+      "tobedate": "Bitim Tarihi",
+      "location": "Üretim Yeri",
+      "totalreport": "Toplu Raporlar",
+      "getreports": "Raporla",
+      "decktype": "Tavan Tipi",
+      "reporting": "Raporla"
+    },
+    "reportdetails": {
+      "reports": "Raporlar",
+      "report": "Rapor",
+      "reportlogs": "Rapor Logları",
+      "deck": "Kaynak",
+      "reportdate": "Rapor Tarihi",
+      "reportuser": "Kullanıcı",
+      "reporttypes": "Rapor Tipleri",
+      "testplans": "QS-Dokümanları ve Test Planları",
+      "printstatus": "Yazdırılma Durumu",
+      "notprinted": "Yazdırılmamış",
+      "printed": "Yazdırılmış",
+      "bbnr": "BBNR",
+      "buttons": {
+        "cutting": "Kesim",
+        "gessler": "Gessler",
+        "stitching": "Dikiş",
+        "stitchingcurtain": "Dikiş/Perde",
+        "montage": "Montaj",
+        "extraseat": "Extra Koltuk",
+        "seatmask": "Koltuk Maskesi",
+        "ugautomat": "UG-Otomatı",
+        "pushersaw": "İtici Testere",
+        "qsverification": "QS Kontrol",
+        "seatfoot": "Koltuk Ayağı",
+        "headpiping": "Başlık/Borular",
+        "labels": "Etiketler",
+        "overview": "Genel Bakış",
+        "labelc2": "C2 Etiketler",
+        "KSW": "KSW",
+        "barcode": "Barkodlu Etiketler",
+        "press": "Baskı",
+        "preview": "Önizleme",
+        "presspreviewtype": "Baskı/Önüzleme",
+        "testplan": "Test Planı",
+        "aa5cutting": "AA5 Kesim",
+        "aa6stitching": "AA6 Dikiş",
+        "qs1extraseat": "QS1 Ekstra Koltuk",
+        "aa4upholstery": "AA4 Döşeme",
+        "qs4upholstery": "QS4 Döşeme",
+        "qs2assembly": "QS2 Montaj",
+        "qs3fitting": "QS3 Montaj",
+        "reportdirectprint": "Doğrudan Rapor Yazdırma",
+        "selectallreports": "Hepsini Seç"
+      }
+    }
+  },
+  "masterdata": {
+    "frontdata": {
+      "pleaseSelect": "Lütfen Seçiniz",
+      "colour": "Renk",
+      "characteristic": "Karakteristik",
+      "characteristicDG": {
+        "characteristicColumn": {
+          "lfdnrCharacteristic": "lfdnrCharacteristic",
+          "characteristicValue": "characteristic",
+          "area": "area",
+          "sort": "sort"
+        }
+      },
+      "status": "Durum",
+      "additionalDisclosure": "Ek Bilgilendirme",
+      "additionalDisclosureDG": {
+        "additionalDisclosureColumn": {
+          "LfdnrSpecification": "LFDNR Spesifikasyon",
+          "Specification": "Spesifikasyon",
+          "StandardTime": "Standard Zaman"
+        }
+      },
+      "statusDG": {
+        "statusColumn": {
+          "statusId": "Statü Index",
+          "statusName": "Statü Adı"
+        }
+      },
+      "chairType": "Koltuk Tipi",
+      "chairTypeDG": {
+        "chairTypeColumn": {
+          "lfdnrChairType": "Lfdnr Koltuk Tipi",
+          "chairType": "Koltuk Tipi",
+          "classification": "Sınıflandırma",
+          "setupTime": "Kurulum Süresi",
+          "active": "Aktif",
+          "janzList": "Janz Listesi",
+          "outsideCompany": "Dış Şirket",
+          "feedback": "Geri Bildirim",
+          "referenceTime": "Referans Süresi",
+          "presetTimeReferenceSlot": "Preset Time Reference Slot",
+          "group": "Grup",
+          "upholsteryLine": "Döşeme Hattı",
+          "tbSeatFrame": "TB Koltuk Çerçevesi",
+          "colloquial": "Colloquial",
+          "factorForNumberCalculation": "Factor For Number Calculation"
+        }
+      },
+      "materialOrigin": "Malzeme Tipi",
+      "materialOriginDG": {
+        "materialOriginColumn": {
+          "lfdnrMaterial": "Materyal Numarası",
+          "partNumber": "Parça Numarası",
+          "designation": "İsim",
+          "position": "Pozisyon",
+          "lfdnrCharacteristic": "Karakteristik Numarası",
+          "standardTimeInMinute": "Standart Zaman (dk)",
+          "vzko": "VZKO",
+          "VZBW": "VZBW",
+          "VZEL": "VZEL",
+          "VZAZ": "VZAZ",
+          "VZVS": "VZVS",
+          "VZMO": "VZMO",
+          "VZAL": "VZAL",
+          "VZGF": "VZGF",
+          "standart": "Standart",
+          "active": "Aktif",
+          "createdBy": "Oluşturan Kişi",
+          "createdOn": "Oluşturma Tarihi",
+          "alteredFrom": "Değişiklik Yapan",
+          "changedOn": "Değişiklik Tarihi",
+          "bulkGood": "Depo",
+          "numberAdditionalShare": "Ek Paylaşım Sayısı",
+          "background": "Arka Fon",
+          "foreground": "Ön Plan",
+          "posX": "posX",
+          "posY": "posY",
+          "picture": "Resim",
+          "acquisitionVariation": "Satın Alma Varyasyonu",
+          "partNumberWithout": "Parça Numarası Eksik"
+        }
+      },
+
+      "matrix": "Matrix",
+      "user": "Kullanıcı",
+      "title": "Master Data Ön Yüz",
+      "colourDG": {
+        "colourColumn": {
+          "colourId": "Renk Id",
+          "colourName": "Renk"
+        }
+      },
+      "rearSeatPan": "Koltuk Kaseti",
+      "rearSeatPanDG": {
+        "rearSeatPanColumn": {
+          "rearSeatPanId": "Parça Numarası",
+          "narrow": "Darlık",
+          "characteristic": "Karakteristik",
+          "remark": "Notlar"
+        }
+      },
+      "wallConnection": "Yan duvar bağlantısı",
+      "wallConnectionDG": {
+        "wallConnectionColumn": {
+          "wallConnectionId": "Parça Numarası",
+          "characteristic": "Karakteristik"
+        }
+      },
+      "chairFoot": "Koltuk ayağı",
+      "chairFootDG": {
+        "chairFootColumn": {
+          "chairFootId": "Parça Numarası",
+          "chairFootName": "Karakteristik"
+        }
+      },
+      "lateralAdjustment": "Yanal Kaydırma",
+      "lateralAdjustmentDG": {
+        "lateralAdjustmentColumn": {
+          "EB": "EB No",
+          "Designation": "İsim",
+          "LateralAdjustmentLI": "Yanal Kaydırma Sol",
+          "LateralAdjustmentRE": "Yanal Kaydırma Sağ",
+          "Gauge": "Şablon"
+        }
+      },
+      "belt": "Kemer",
+      "beltDG": {
+        "beltColumn": {
+          "EB": "EB No",
+          "Designation": "İsim",
+          "Link": "Link",
+          "Right": "Sağ",
+          "Program": "Program",
+          "DSCharacteristic": "DS Karakteristik",
+          "NumberOfBack": "Arkalık Sayısı",
+          "Arrangement": "Aranjman"
+        }
+      },
+      "sideCover": "Yan Kapama",
+      "sideCoverDG": {
+        "sideCoverColumn": {
+          "PartNumber": "Parça Numarası",
+          "Designation": "İsim",
+          "BeltAisleSide": "Kemer Vites Tarafında",
+          "ArmRest": "Kol Desteği"
+        }
+      },
+      "adjustingLever": "Ayar Mandalı",
+      "adjustingLeverDG": {
+        "adjustingLeverColumn": {
+          "PartNumber": "Parça Numarası",
+          "NumberOfBlocking": "Bloke Sayısı",
+          "Designation": "İsim",
+          "Page": "Sayfa"
+        }
+      },
+      "backrestAdjustment": "Sırtlık Ayarı",
+      "backrestAdjustmentDG": {
+        "backrestAdjustmentColumn": {
+          "eB": "EB",
+          "designation": "Tayin",
+          "numberOfPnematicSpring": "Pnömatik Yay Sayısı",
+          "pretenseLi": "Numara Li",
+          "pretenseRe": "Numara Re"
+        }
+      },
+      "stCharacteristic": "St Karakteristik",
+      "stCharacteristicDG": {
+        "stCharacteristicColumn": {
+          "lfdnrCharacteristic": "LfdNr Karakteristik",
+          "characteristic": "Karakteristik",
+          "sort": "Çeşit",
+          "lfdnrPot": "Lfdnr Tencere",
+          "cut": "Kesim",
+          "stitching": "Dikiş",
+          "specialSeat": "Özel Koltuk",
+          "montage": "Montaj",
+          "issueCircus": "Sayı Sirk",
+          "materialRevelant": "Malzeme Soykırımı"
+        }
+      },
+      "stMaterialMaster": "St Malzeme Ustası",
+      "stMaterialMasterDG": {
+        "stMaterialMasterColumn": {
+          "partNumber": "Parça Numarası",
+          "designations": "Belirtme",
+          "lfdNrCharacteristic": "lfdNr Karakteristik",
+          "active": "Aktiv",
+          "createdBy": "Oluşturan Kişi",
+          "createdOn": "Oluşturma Zamanı",
+          "alteredFrom": "Değiştiren",
+          "changedOn": "Değiştirme Zamanı",
+          "area": "Alan",
+          "designationReport": " Rapor Belirtme",
+          "issueLabel": "Konu Etiketi",
+          "columnReportSpecialSeat": "Özel Koltuk Raporu",
+          "issueReport": "Konu Raporu",
+          "lineReportCircus": "Sirk Hat Raporu",
+          "issueReportCircus": "Sirk Konu Raporu",
+          "columnSSFNS": "Kolon SSFNS",
+          "issueSSFNS": "Konu SSFNS",
+          "columnSSFS": " Kolon SSFS",
+          "issueSSFS": "Konu SSFS",
+          "labelText": "Etiket Yazısı",
+          "uGR": "UGR",
+          "kSW": "KSW"
+        }
+      },
+      "remark": "Açıklama",
+      "remarkDG": {
+        "remarkColumn": {
+          "remark": "Açıklama"
+        }
+      },
+      "seatFrame": "Koltuk İskeleti",
+      "seatFrameDG": {
+        "seatFrameColumn": {
+          "ebNumber": "EB Numarası",
+          "designation": "Atama",
+          "tnrSupportTube": "TNR Destek Tüpü",
+          "amount": "Tutar",
+          "template": "Şablon",
+          "seatPitch": "Koltuk Zifti",
+          "page": "Sayfa",
+          "colorInfo": "Renk Bilgisi",
+          "adapter": "Adaptör",
+          "characteristic": "Karakteristik",
+          "tnrLi": "TNR Li",
+          "tnrRe": "TNR Re"
+        }
+      }
+    }
+  },
+  "general": {
+    "akveo": "Akveo",
+    "home": "Anasayfa",
+    "search": "Ara",
+    "forms": {
+      "option1": "Option 1"
+    },
+    "menu": {
+      "bant1tepsi1": "Bant1Tepsi1",
+      "dashboard": "Panel",
+      "editors": "Editors",
+      "ck_editor": "CKEditor",
+      "components": "Components",
+      "tree_view": "Tree View",
+      "charts": "Charts",
+      "chartist_js": "Chartist.Js",
+      "ui_features": "UI Features",
+      "typography": "Typography",
+      "buttons": "Buttons",
+      "icons": "Icons",
+      "modals": "Modals",
+      "grid": "Grid",
+      "form_elements": "Form Elements",
+      "form_inputs": "Form Inputs",
+      "form_layouts": "Form Layouts",
+      "tables": "Tables",
+      "basic_tables": "Basic Tables",
+      "smart_tables": "Smart Tables",
+      "maps": "Maps",
+      "google_maps": "Google Maps",
+      "leaflet_maps": "Leaflet Maps",
+      "bubble_maps": "Bubble Maps",
+      "line_maps": "Line Maps",
+      "pages": "Pages",
+      "login": "Login",
+      "register": "Register",
+      "menu_level_1": "Menu Level 1",
+      "menu_level_1_1": "Menu Level 1.1",
+      "menu_level_1_2": "Menu Level 1.2",
+      "menu_level_1_2_1": "Menu Level 1.2.1",
+      "external_link": "External Link"
+    },
+    "created_with": "Created with"
+  },
+  "dashboard": {
+    "profile": "Profil",
+    "settings": "Ayarlar",
+    "signout": "Çıkış",
+    "welcome": "Hoşgeldiniz",
+    "message": "Mercedes - Benz Koltuk Üretim Yönetimi Programına Hoşgeldiniz ",
+    "dailyproductionstatus": "Günlük Üretİm Durumu",
+    "producted": "Tamamlanmış",
+    "fault": "Hatalı",
+    "trace1": "Bant 1",
+    "trace2": "Bant 2",
+    "trace3": "Bant 3",
+    "totalproduction": "Toplam Üretim",
+    "weeklyproductionstatus": "Bant Bazında Haftalık Üretim Durumu",
+    "language": "Lütfen Dil Seçiniz",
+    "acquisition_channels": "Acquisition Channels",
+    "users_by_country": "Users by Country",
+    "revenue": "Revenue",
+    "feed": "Feed",
+    "todo_list": "To Do List",
+    "calendar": "Calendar",
+    "new_visits": "New Visits",
+    "purchases": "Purchases",
+    "active_users": "Active Users",
+    "returned": "Returned",
+    "popular_app": {
+      "super_app": "Super App",
+      "most_popular_app": "Most Popular App",
+      "total_visits": "Total Visits",
+      "new_visits": "New Visits",
+      "sales": "Sales"
+    },
+    "todo": {
+      "task_todo": "Task to do.."
+    },
+    "traffic_chart": {
+      "view_total": "Views Total"
+    }
+  },
+  "tree_view": {
+    "title": "basic",
+    "programming": "Programming languages by programming paradigm",
+    "oop": "Object-oriented programming",
+    "java": "Java",
+    "c_plus_plus": "C++",
+    "c_sharp": "C#",
+    "prototype": "Prototype-based programming",
+    "java_script": "JavaScript",
+    "coffee_script": "CoffeeScript",
+    "lua": "Lua"
+  },
+  "chart": {
+    "lines": "Lines",
+    "bars": "Bars",
+    "simple_line_chart": "Simple line chart",
+    "line_chart": "Line chart with area",
+    "bi_polar_line_chart": "Bi-polar line chart with area only",
+    "simple_bar_chart": "Simple bar chart",
+    "multi_line_labels_bar_chart": "Multi-line labels bar chart",
+    "stacked_bar_chart": "Stacked bar chart",
+    "pies_and_donuts": "Pies & Donuts",
+    "simple_pie": "Simple Pie",
+    "pie_with_labels": "Pie with labels",
+    "donut": "Donut"
+  },
+  "editorder": {
+    "ordernumber": "Sipariş No",
+    "bbmin": "BBNr min",
+    "bbmax": "BBNr max",
+    "comment": "Yorum",
+    "status": "Statü",
+    "filter": "Listele",
+    "editOrderDetailsDG": {
+      "orderDetails": "Sipariş İşleme Detayları",
+      "orderNumber": "Sipariş No",
+      "bbmin": "BBNr min",
+      "bbmax": "BBNr max",
+      "comment": "Yorum",
+      "status": "Statü",
+      "workingUnit": "İş Birimleri"
+    }
+  },
+  "external": {
+    "busmanagement": {
+      "busspecification": {
+        "BB_NUMBER": "Araç Numarası",
+        "MODEL": "Araç Modeli",
+        "TYPE": "Araç Tipi",
+        "COUNTRY": "Ülke",
+        "FILE_UPLOAD": "Dosya Aktar",
+        "FILTER": "Listele",
+        "RESET": "Temizle",
+        "REPORT_MATERIAL": "Malzeme Raporla"
+      },
+      "busdetail": {
+        "VEHICLE_DETAILS": "Otobüs Detayları",
+        "BB_NUMBER": "Araç Numarası",
+        "MODEL": "Araç Modeli",
+        "TYPE": "Araç Tipi",
+        "COUNTRY": "Ülke",
+        "BAND_RECIVE_DATE": "Bandalış Tarihi",
+        "KW_INFO": "KW Bilgisi",
+        "SEATS_CONDITIONING_PICTURE": "Koltuklandırma Teknik Resim Numarası",
+        "VEHICLE_SEAT_TYPE": "Dosya Aktar",
+        "PASSENGER_SEAT_COUNT": "Yolcu Koltuk Adedi",
+        "HOSTESS_SEAT_TYPE": "Hostes Koltuk",
+        "BACK_ROW_SEAT_TYPE": "Arka Sıra Koltuk",
+        "BACK_ROW_SEAT_PICTURE": "Arka Sıra Teknik Resim Numarası",
+        "SEATING_FABRICS": "Koltuklandırma Kumaşları",
+        "PASSENGER_SITTING": "Oturma",
+        "PASSENGER_LATERAL": "Yan Parça",
+        "PASSENGER_BELLOWS": "Körük",
+        "PASSENGER_BRUSH": "Faça",
+        "PASSENGER_OUT_BACK": "Dış Arka",
+        "PASSENGER_HEAD": "Başlık",
+        "PASSENGER_WICK": "Fitil",
+        "PORTABLE_HEAD": "Seyyar Başlık",
+        "PORTABLE_HEAD_FASTENER": "Çıtçıt/Cırt",
+        "PORTABLE_HEAD_PORTABLE_FIXED": "Seyyar/Sabit",
+        "PORTABLE_HEAD_PORTABLE_FIXED_FABRIC": "Seyyar/Sabit Kumaş",
+        "CURTAINS": "Perdeler",
+        "CURTAIN_FIRST_FABRIC": "1. Kumaş",
+        "CURTAIN_SECOND_FABRIC": "2. Kumaş",
+        "DOOR_TYPE": "Kapı Tipi",
+        "DRIVER_BACK_CURTAIN_FABRIC": "Şoför Arkası Perde Kumaşı",
+        "DRIVER_SLEEPING_QUARTER": "Yatma Yeri Perde Kumaşı",
+        "DRIVER_SEAT": "Şoför Koltuğu",
+        "DRIVER_SITTING": "Oturma",
+        "DRIVER_LATERAL": "Yan Parça",
+        "DRIVER_FACE": "Faça",
+        "DRIVER_OUT_BACK": "Dış Arka",
+        "DRIVER_HEAD": "Başlık",
+        "DRIVER_ARMREST": "Kol Dayama",
+        "DRIVER_HEATING": "Isıtma",
+        "DRIVER_VIBRATION": "Titreşim",
+        "DRIVER_MERCEDES_STAR": "Mercedes Yıldızı",
+        "HOSTESS_SEAT": "Hostes Koltuğu",
+        "HOSTESS_HEAD": "Başlık",
+        "HOSTESS_ELECTRICAL": "Elektrikli",
+        "HOSTESS_LOCK": "Kilitleme",
+        "NET": "File",
+        "NET_TYPE": "File Tipi",
+        "NET_FABRIC_CODE": "File Kumaşı",
+        "SAVE": "Kaydet",
+        "SAVE_AND_CONTINUE": "Kaydet ve Devam Et"
+      },
+      "busseat": {
+        "SELECTED_SEAT_COUNT": "Seçilen Koltuk Sayısı",
+        "MULTISELECT": "Çoklu Seç",
+        "MOVESELECT": "Sürükle Seç",
+        "REMOVE_ALL_ASSIGNMENT": "Tüm Atamaları Kaldır"
+      },
+      "busmaterial": {
+        "FILE_UPLOAD": "Dosya Aktar",
+        "ADD_MATERIAL": "Malzeme Ekle",
+        "UPLOAD": "Yükle",
+        "DELETE_MATERIALS": "Materyalleri Sil",
+        "materialadd": {
+          "ADD_MATERIAL": "Malzeme Ekle",
+          "STATION_NUMBER": "İstasyon Numarası",
+          "OTHER": "Diğer",
+          "UNIT": "Birim",
+          "QUANTITY": "Adet",
+          "MATERIAL_NUMBER": "Malzeme Numarası",
+          "MATERIAL_NAME": "Malzeme Adı",
+          "SAVE": "Kaydet"
+        },
+        "materiallist": {
+          "UNIT": "Birim",
+          "QUANTITY": "Adet",
+          "MATERIAL_NUMBER": "Malzeme Numarası",
+          "MATERIAL_NAME": "Malzeme Adı",
+          "WAREHOUSE_NUMBER": "Ambar Numarası",
+          "UNNAMED_WAREHOUSE_NUMBER": "İsimsiz Ambar Numarası"
+        },
+        "stationlist": {}
+      },
+      "busimport": {
+        "UPLOAD": "Yükle",
+        "RETURN_TO_BUS_LIST": "Otobüs Listesine Dön",
+        "RECREATE": "Yeniden Oluştur"
+      }
+    },
+    "busmasterdata": {
+      "STATION": "İstasyon",
+      "WAREHOUSE": "Ambar",
+      "COUNTRY": "Ülke",
+      "SEAT_TYPE": "Koltuk Tipi",
+      "HOSTESS": "Hostes",
+      "BACK_ROW": "Arka Sıra",
+      "STATION_NUMBER": "İstasyon Numarası",
+      "STATION_NAME": "İstasyon Adı",
+      "MATERIAL_NUMBER": "Malzeme Numarası",
+      "WAREHOUSE_NUMBER": "Ambar Numarası",
+      "TR": "Türkçe",
+      "EN": "İngilizce",
+      "DE": "Almanca"
+    },
+    "swal": {
+      "action": {
+        "YES": "Evet",
+        "NO": "Hayır",
+        "OK": "Tamam"
+      },
+      "defaultmessage": {
+        "CONFIRM_TITLE": "Onay!",
+        "CONFIRM_TEXT": "İşlem tamamlanacaktır. Onaylıyor musunuz?",
+        "SUCCESS_TITLE": "BAŞARILI",
+        "SUCCESS_TEXT": "İşlem başarıyla tamamlandı.",
+        "ERROR_TITLE": "HATALI",
+        "ERROR_TEXT": "İşlem sırasında bir hata oluştu!"
+      }
+    }
+  }
+}

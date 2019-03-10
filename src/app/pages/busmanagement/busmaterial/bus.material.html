@@ -1,0 +1,48 @@
+<div class="alert alert-success">
+  <div class="row">
+    <div class="col-md-6">
+      <a [routerLink]="['../../busdetail', bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-eye"></li>
+      </a>
+      <a [routerLink]="['../../busmaterial',bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-server"></li>
+      </a>
+      <a [routerLink]="['../../busseat', bbNumber]" style="padding-right: 4px; font-size:20px">
+        <li class="fa fa-bus"></li>
+      </a>
+    </div>
+    <div class="col-md-6 text-right">
+      <span style="font-size: 20px; font-weight: bold">{{bbNumber}}</span>
+    </div>
+  </div>
+</div>
+<ba-card title=" " baCardClass="with-scroll">
+  <div class="text-right" style="margin-bottom:5px">
+    <button class="btn btn-sm btn-info" (click)="isFileUpload = !isFileUpload">
+      <i [ngClass]="isFileUpload ? 'fa-minus' : 'fa-plus'" class="fa"></i>
+      {{'external.busmanagement.busmaterial.FILE_UPLOAD' | translate}}
+    </button>
+    <button class="btn btn-sm btn-warning" (click)="isAddMaterial = !isAddMaterial">
+      <i [ngClass]="isAddMaterial ? 'fa-minus' : 'fa-plus'" class="fa"></i>
+      {{'external.busmanagement.busmaterial.ADD_MATERIAL' | translate}}
+    </button>
+  </div>
+  <div *ngIf="isFileUpload" class="col-md-12 alert alert-info" [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }">
+    <div class="row">
+      <div class="col-md-8">
+        <input type="file" (change)="selectedFileChange($event)" #fileInput placeholder="Upload file..." />
+      </div>
+      <div class="col-md-4 text-right">
+        <button *ngIf="selectedFile" class="btn btn-warning" [disabled]="isLoading || isSaving" [ngClass]="{'m-progress':isLoading}"
+          (click)="importExportedSingleBBFile()">
+          {{'external.busmanagement.busmaterial.UPLOAD' | translate}}
+        </button>
+        <button class="btn btn-danger" (click)="deleteMaterials()">
+          {{'external.busmanagement.busmaterial.DELETE_MATERIALS' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <material-add *ngIf="isAddMaterial" (materialAdded)="refreshMaterialList()"></material-add>
+  <app-station-list [isEditable]="true" [stationList]="stationList"></app-station-list>
+</ba-card>

@@ -1,0 +1,74 @@
+<table class="table table-sm table-hover table-striped table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th style="width:15%">{{'external.busmanagement.busmaterial.materiallist.MATERIAL_NUMBER' | translate}}</th>
+      <th style="width:35%">{{'external.busmanagement.busmaterial.materiallist.MATERIAL_NAME' | translate}}</th>
+      <th style="width:15%">{{'external.busmanagement.busmaterial.materiallist.WAREHOUSE_NUMBER' | translate}}</th>
+      <th style="width:10%">{{'external.busmanagement.busmaterial.materiallist.QUANTITY' | translate}}</th>
+      <th style="width:10%">{{'external.busmanagement.busmaterial.materiallist.UNIT' | translate}}</th>
+      <th style="width:15%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let material of materialList">
+      <td>
+        <div *ngIf="material.show; else elseBlock1">
+          <input class="form-control form-control-sm" [readonly]="true" [ngModel]="material.materialNumber" type="text" name="materialNumber">
+        </div>
+        <ng-template #elseBlock1>
+          {{material.materialNumber}}
+        </ng-template>
+      </td>
+      <td>
+        <div *ngIf="material.show; else elseBlock2">
+          <input class="form-control form-control-sm" [(ngModel)]="material.materialName" type="text" name="materialName">
+        </div>
+        <ng-template #elseBlock2>
+          {{material.materialName}}
+        </ng-template>
+      </td>
+      <td>
+          <div *ngIf="material.show; else elseBlock6">
+            <input class="form-control form-control-sm" [readonly]="true" [ngModel]="material.warehouseNumber" type="text" name="warehouseNumber">
+          </div>
+          <ng-template #elseBlock6>
+            {{material.warehouseNumber === null ? ('external.busmanagement.busmaterial.materiallist.UNNAMED_WAREHOUSE_NUMBER' | translate) : material.warehouseNumber}}
+          </ng-template>
+        </td>
+      <td>
+        <div *ngIf="material.show; else elseBlock3">
+          <input class="form-control form-control-sm" [(ngModel)]="material.quantity" type="text" name="quantity">
+        </div>
+        <ng-template #elseBlock3>
+          {{material.quantity}}
+        </ng-template>
+      </td>
+      <td>
+        <div *ngIf="material.show; else elseBlock4">
+          <input class="form-control form-control-sm" [(ngModel)]="material.unit" type="text" name="unit">
+        </div>
+        <ng-template #elseBlock4>
+          {{material.unit}}
+        </ng-template>
+      </td>
+      <td>
+        <div *ngIf="material.show; else elseBlock5">
+          <button class="btn btn-sm btn-success btn block" (click)="updateMaterial(material)">
+            <i class="fa fa-refresh"></i>
+          </button>
+          <button class="btn btn-sm btn-warning" (click)="material.show = !material.show">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+        <ng-template #elseBlock5>
+          <button class="btn btn-sm btn-danger" (click)="deleteMaterial(material.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+          <button class="btn btn-sm btn-warning" (click)="material.show = !material.show">
+            <i class="fa fa-pencil"></i>
+          </button>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

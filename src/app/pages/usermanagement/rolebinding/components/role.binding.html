@@ -1,0 +1,276 @@
+<div class="form-group">
+
+  <ba-card title="{{'usermanagement.rolebinding.searchheader' | translate}}" baCardClass="with-scroll">
+    <!-- SEARCHING CRITERIAS -->
+    <div class="row col-md-12">
+
+      <div class="col-md-4">
+        <label for="userName">{{'usermanagement.rolebinding.username' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="searchUser.userName"
+               class="form-control"
+               id="userName"
+               placeholder="{{'usermanagement.rolebinding.username' | translate}}"
+        >
+      </div>
+
+      <div class="col-md-4">
+        <label for="personnelName">{{'usermanagement.rolebinding.personnelName' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="searchUser.personnelName"
+               class="form-control"
+               id="personnelName"
+               placeholder="{{'usermanagement.rolebinding.personnelName' | translate}}"
+        >
+      </div>
+
+      <div class="col-md-4">
+        <label for="personnelSurname">{{'usermanagement.rolebinding.personnelSurname' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="searchUser.personnelSurname"
+               class="form-control"
+               id="personnelSurname"
+               placeholder="{{'usermanagement.rolebinding.personnelSurname' | translate}}"
+        >
+      </div>
+
+    </div>
+
+    <br>
+
+
+    <!--<div class="row col-md-12">
+
+      <div class="col-md-4">
+        <label for="email">{{'usermanagement.rolebinding.email' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="searchUser.email"
+               class="form-control"
+               id="email"
+               placeholder="{{'usermanagement.rolebinding.email' | translate}}"
+        >
+      </div>
+      <div class="col-md-4">
+        <label for="phoneNumber">{{'usermanagement.rolebinding.phoneNumber' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="searchUser.phoneNumber"
+               class="form-control"
+               id="phoneNumber"
+               placeholder="{{'usermanagement.rolebinding.phoneNumber' | translate}}"
+        >
+      </div>
+
+    </div>-->
+    <!-- END OF SEARCHING CRITERIAS -->
+    <br>
+
+    <div class="row col-md-12">
+
+      <div class="col-md-4">
+        <div class="button-wrapper">
+          <button type="button" (click)="onSearchClicked()" class="btn btn-success">
+            {{'usermanagement.rolebinding.filter' | translate}}
+          </button>
+          <button type="button" class="btn btn-info" (click)="onResetClicked();">{{'usermanagement.rolebinding.reset' |
+            translate}}
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <br>
+
+    <table class="table table-striped" [mfData]="userList" #mf="mfDataTable"  [mfRowsOnPage]="5" *ngIf="userList.length > 0" >
+      <thead>
+      <tr>
+        <th style="width: 5%">
+
+        </th>
+        <th style="width: 10%">
+          <mfDefaultSorter by="username">{{'usermanagement.rolebinding.username' | translate}}</mfDefaultSorter>
+        </th>
+        <th style="width: 20%">
+          <mfDefaultSorter by="personnelName">{{'usermanagement.rolebinding.personnelName' | translate}}
+          </mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+          <mfDefaultSorter by="personnelSurname">{{'usermanagement.rolebinding.personnelSurname' | translate}}
+          </mfDefaultSorter>
+        </th>
+        <th style="width: 25%">
+          <mfDefaultSorter by="email">{{'usermanagement.rolebinding.email' | translate}}</mfDefaultSorter>
+        </th>
+        <th style="width: 20%">
+          <mfDefaultSorter by="dateStarted">{{'usermanagement.rolebinding.dateCreated' | translate}}</mfDefaultSorter>
+        </th>
+      </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let item of mf.data">
+        <td><li class="ion ion-ios-eye"
+                style="cursor: pointer;
+                       cursor: hand;"
+                (click)="onEditClicked(item)" ></li></td>
+        <td>{{item.userName}}</td>
+        <td>{{item.personnelName}}</td>
+        <td>{{item.personnelSurname}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.dateCreated}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="4">
+          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+
+
+    <div
+      [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }">
+    </div>
+  </ba-card>
+
+</div>
+
+<!-- *******************************************************DATA TABLE***************************************************-->
+
+<!-- *******************************************************MODALS***************************************************-->
+<errormodal #errormodal></errormodal>
+<successmodal #successmodal></successmodal>
+
+<modal #userdetails title="User Details" class="modal-open">
+  <modal-header class="bg-info">
+    <h4 class="modal-title">
+      {{'usermanagement.rolebinding.userdetails' | translate}}
+    </h4>
+  </modal-header>
+  <modal-body class="modal-body">
+    <div class="row col-md-12">
+
+      <div class="col-md-6">
+        <label for="detailUserName">{{'usermanagement.rolebinding.username' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="userDetail.userName"
+               class="form-control"
+               id="detailUserName"
+               disabled="true"
+               placeholder="{{'usermanagement.rolebinding.username' | translate}}"
+        >
+      </div>
+
+      <div class="col-md-6">
+        <label for="detailPersonnelName">{{'usermanagement.rolebinding.personnelName' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="userDetail.personnelName"
+               class="form-control"
+               disabled="true"
+               id="detailPersonnelName"
+               placeholder="{{'usermanagement.rolebinding.personnelName' | translate}}"
+        >
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row col-md-12">
+
+
+      <div class="col-md-6">
+        <label for="detailPersonnelSurname">{{'usermanagement.rolebinding.personnelSurname' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="userDetail.personnelSurname"
+               class="form-control"
+               disabled="true"
+               id="detailPersonnelSurname"
+               placeholder="{{'usermanagement.rolebinding.personnelSurname' | translate}}"
+        >
+      </div>
+
+      <div class="col-md-6">
+        <label for="detailEmail">{{'usermanagement.rolebinding.email' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="userDetail.email == null ? '-------' : userDetail.email"
+               class="form-control"
+               id="detailEmail"
+               disabled="true"
+               placeholder="{{'usermanagement.rolebinding.email' | translate}}"
+        >
+      </div>
+
+
+    </div>
+
+    <div class="row col-md-12">
+      <div class="col-md-6">
+        <label for="detailPhoneNumber">{{'usermanagement.rolebinding.phoneNumber' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="userDetail.phoneNumber"
+               class="form-control"
+               id="detailPhoneNumber"
+               disabled="true"
+               placeholder="{{'usermanagement.rolebinding.phoneNumber' | translate}}"
+        >
+      </div>
+    </div>
+    <br>
+    <div class="row mb-12 table-filter">
+      <div class="form-group col-12">
+        <div style="height:2px;width:100%;background-color:#dadada;display:block"></div>
+      </div>
+    </div>
+    <br>
+
+    <table class="table table-bordered" [mfData]="roleList" #mf="mfDataTable" [mfRowsOnPage]="5">
+      <thead>
+      <tr>
+        <th style="width: 20%">
+          <input type="checkbox" (change)="upperCheckBoxSelected();"/>
+        </th>
+        <th style="width: 40%">
+          <mfDefaultSorter by="name">Id</mfDefaultSorter>
+        </th>
+        <th style="width: 40%">
+          <mfDefaultSorter by="email">Name</mfDefaultSorter>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of mf.data">
+        <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+      </tr>
+      </tbody>
+
+      <tfoot>
+      <tr>
+        <td colspan="4">
+          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+
+
+    <div class="row mb-12 table-filter">
+      <div class="form-group col-12">
+        <div style="height:2px;width:100%;background-color:#dadada;display:block"></div>
+      </div>
+    </div>
+  </modal-body>
+
+  <modal-footer class="modal-footer">
+    <div class="button-wrapper" align="right">
+      <button type="button" class="btn btn-success" (click)="onUserDetailsModalSaveClicked();">
+        {{'usermanagement.rolebinding.save' | translate}}
+      </button>
+      <button type="button" class="btn btn-danger" (click)="onUserDetailsModalCloseClicked();">
+        {{'usermanagement.rolebinding.close' | translate}}
+      </button>
+    </div>
+  </modal-footer>
+</modal>

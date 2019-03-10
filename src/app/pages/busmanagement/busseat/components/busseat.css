@@ -1,0 +1,18 @@
+.koltuk {
+  width: 33px;
+  height: 33px;
+}
+.seat {
+  background-color: rgb(91, 218, 91);
+  cursor: pointer;
+}
+.seat.selected {
+  background-color: rgb(248, 126, 126) !important;
+}
+.hasMaterial {
+  color: white;
+}
+.backseat{
+  background-color: rgb(212, 165, 235);
+  cursor: pointer;
+}

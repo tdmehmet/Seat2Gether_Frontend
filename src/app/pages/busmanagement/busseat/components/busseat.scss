@@ -1,0 +1,27 @@
+.seat {
+  background-color: rgb(108, 211, 108);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+.sofor {
+  background-color: rgb(98, 161, 255);
+  cursor: pointer;
+}
+.hostes {
+  background-color: rgb(240, 182, 161);
+  cursor: pointer;
+}
+.selected {
+  background-color: rgb(243, 145, 145) !important;
+  cursor: pointer;
+}
+.hasMaterial {
+  color: white;
+}
+.backseat {
+  background-color: rgb(212, 165, 235);
+  cursor: pointer;
+}

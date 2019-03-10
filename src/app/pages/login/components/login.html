@@ -1,0 +1,43 @@
+<div class="auth-main">
+  <div class="auth-block">
+    <!--<h1 translate>{{'login.title'}}</h1>-->
+    <div class="login-logo">
+      <img src="assets/img/s2g/s2g_logo_transparent.png"/> 
+    </div>      
+    <form class="form-horizontal">
+      <div class="form-group row" [ngClass]="{'has-danger': (UserName == ''), 'has-success': (UserName != '') }" >
+        <label for="inputUserName" class="col-sm-2"><font color="#FFFFFF">{{'login.username' | translate}}</font></label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="user.UserName"
+                 type="text"
+                 class="form-control"
+                 id="inputUserName"
+                 name="inputUserName"
+                 placeholder="{{'login.username' | translate}}">
+        </div>
+      </div>
+      <div class="form-group row" [ngClass]="{'has-danger': (Password == ''), 'has-success': (Password != '') }">
+        <label for="inputPassword" class="col-sm-2"><font color="#FFFFFF">{{'login.password' | translate}}</font></label>
+        <div class="col-sm-10">
+          <input type="password"
+                 [(ngModel)]="user.Password"
+                 class="form-control"
+                 id="inputPassword"
+                 name="inputPassword"
+                 placeholder="{{'login.password' | translate}}">
+        </div>
+      </div>
+      <div class="form-group row" >
+        <div class="offset-sm-2 col-sm-2">
+          <button (click)="login();" class="btn" translate>
+            {{'login.sign_in'}}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!--     MODALS      -->
+<div [ngBusy]="{busy: busy, message: 'modal.busyMessage' | translate, backdrop: false, delay: 200, minDuration: 600 }"></div>
+<errormodal #errormodal></errormodal>
+<!--  END OF MODALS  -->

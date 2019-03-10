@@ -1,0 +1,77 @@
+<!-- 
+<div class="row">
+  <div class="col-6 col-6 col-md-12 col-sm-12 col-12">
+    <h3>{{ 'dashboard.message' | translate }}  {{getUserName()}}</h3>
+  </div>
+</div>
+-->
+
+
+<!--<div class="row">
+  <div class="col-xlg-1 col-xl-1 col-lg-1 col-sm-1 col-1">
+    <img src="../../../assets/img/lobrand1.png.png" />
+  </div>
+-->
+<!--<div class="section-block">
+  <h2>{{'dashboard.message' | translate}}</h2>
+</div>
+</div>-->
+
+<div class="row">
+  <ba-card class="col-xlg-6 col-xl-6 col-lg-12 col-sm-12 col-12"
+                     title="{{'dashboard.dailyproductionstatus' | translate}}" baCardClass="traffic-panel medium-card">
+    <traffic-chart></traffic-chart>
+  </ba-card>
+  <ba-card class="col-xlg-6 col-xl-6 col-lg-12 col-sm-12 col-12" title="{{'dashboard.weeklyproductionstatus' || translate}}" baCardClass="with-scroll">
+  <h5 translate>{{'dashboard.weeklyproductionstatus'}}</h5>
+  <ba-chartist-chart baChartistChartClass="ct-chart"
+                     baChartistChartType="Line"
+                     [baChartistChartData]="simpleLineData"
+                     [baChartistChartOptions]="simpleLineOptions">
+  </ba-chartist-chart>
+  </ba-card>
+</div>
+
+<div class="row">
+  <div class="col-xlg-6 col-xl-6 col-lg-12 col-sm-12 col-12 section-block" >
+    <img src="../../../assets/img/dashboard/koltuk1.jpg" />
+  </div>
+  <div class="col-xlg-6 col-xl-6 col-lg-12 col-sm-12 col-12 section-block">
+    <img src="../../../assets/img/dashboard/koltuk2.jpg" />
+  </div>
+</div>
+<errormodal #errormodal></errormodal>
+<!--<div class="row">
+  <div class="col-xlg-9 col-xl-6 col-lg-6  col-md-12 col-sm-12 col-12">
+    <div class="row">
+      <ba-card class="col-xlg-8 col-xl-12 col-lg-12 col-md-7 col-sm-12 col-12"
+               title="dashboard.revenue" baCardClass="medium-card">
+        <line-chart></line-chart>
+      </ba-card>
+      <ba-card class="col-xlg-4 col-xl-12 col-lg-12 col-md-5 col-sm-12 col-12"
+               baCardClass="popular-app medium-card">
+        <popular-app></popular-app>
+      </ba-card>
+    </div>
+  </div>
+
+  <div class="col-xlg-3 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <ba-card title="dashboard.feed"
+             baCardClass="large-card with-scroll feed-panel">
+      <feed></feed>
+    </ba-card>
+  </div>
+
+</div>
+
+<div class="row shift-up">
+  <ba-card class="col-xlg-3 col-lg-6 col-md-12 col-sm-12 col-12" title="dashboard.todo_list"
+           baCardClass="xmedium-card feed-comply-panel with-scroll todo-panel">
+    <todo></todo>
+  </ba-card>
+  <ba-card class="col-xlg-6 col-lg-6 col-md-12 col-sm-12 col-12" title="dashboard.calendar"
+           baCardClass="xmedium-card feed-comply-panel with-scroll calendar-panel">
+    <calendar></calendar>
+  </ba-card>
+</div>-->
+

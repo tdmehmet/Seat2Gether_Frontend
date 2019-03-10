@@ -1,0 +1,11 @@
+config
+.idea
+dist
+dll
+node_modules
+src/app/share/credientials.ts
+config/webpack.dev.js
+npm-debug.log
+config/webpack.dev.js
+src/app/share/credientials.ts
+.vscode

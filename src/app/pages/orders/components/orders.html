@@ -1,0 +1,253 @@
+<div class="form-group" >
+  <ba-card title=" " baCardClass="with-scroll">
+    <br>
+    <div class="row col-md-12">
+
+              <div class="col-md-4">
+                <label for="orderNumber">{{'editorder.ordernumber' | translate}}</label>
+                <input type="text"
+                       class="form-control"
+                       id="editOrder"
+                       [(ngModel)]="searchOrder.orderNumber"
+                       placeholder="{{'editorder.ordernumber'| translate}}"
+                >
+              </div>
+                  </div>
+                  <br>
+                  <div class="row col-md-12">
+                    <div class="col-md-4">
+                      <div class="button-wrapper">
+                        <button type="button" (click)="onSearchClicked()" class="btn btn-success">
+                          {{'editorder.filter' | translate}}
+                        </button>
+                       </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <table class="table table-striped" [mfData]="orderDGList" #mf="mfDataTable"  [mfRowsOnPage]="5" *ngIf="orderDGList.length > 0" >
+                    <thead>
+                    <tr>
+                      <th style="width: 5%">
+
+                      </th>
+                      <th style="width: 10%">
+                        <mfDefaultSorter by="bbNumber">{{'editorder.ordernumber' | translate}}</mfDefaultSorter>
+                      </th>
+                      <th style="width: 20%">
+                        <mfDefaultSorter by="type">{{'editorder.bbmin' | translate}}
+                        </mfDefaultSorter>
+                      </th>
+                      <th style="width: 10%">
+                        <mfDefaultSorter by="country">{{'editorder.bbmax' | translate}}
+                        </mfDefaultSorter>
+                      </th>
+                      <th style="width: 25%">
+                        <mfDefaultSorter by="model">{{'editorder.comment' | translate}}</mfDefaultSorter>
+                      </th>
+                      <th style="width: 25%">
+                        <mfDefaultSorter by="model">{{'editorder.status' | translate}}</mfDefaultSorter>
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of mf.data">
+                      <td> <li class="ion ion-ios-eye"
+                              style="cursor: pointer;
+                                     cursor: hand;"
+                                     (click)="onEditClicked(item)"></li></td>
+                      <td>{{item.orderNumber}}</td>
+                      <td>{{item.minBBNR}}</td>
+                      <td>{{item.maxBBNR}}</td>
+                      <td>{{item.comment}}</td>
+                      <td>{{item.status}}</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <td colspan="4">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                      </td>
+                    </tr>
+                    </tfoot>
+                  </table>
+  </ba-card>
+</div>
+<errormodal #errormodal></errormodal>
+<successmodal #successmodal></successmodal>
+
+<!--   **********************   MODAL   **************************   -->
+<modal #orderDetails title="Order Details" class="modal-open">
+  <modal-header class="bg-info">
+    <h4 class="modal-title">
+      {{'editorder.editOrderDetailsDG.orderDetails' | translate}}
+    </h4>
+  </modal-header>
+  <modal-body class="modal-body">
+    <div class="row col-md-12">
+      <div class="col-md-4">
+        <label for="detailOrderNumber">{{'editorder.editOrderDetailsDG.orderNumber' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="orderDetail.orderNumber"
+               class="form-control"
+               id="detailOrderNumber"
+               disabled="true"
+               placeholder="{{'editorder.editOrderDetailsDG.orderNumber' | translate}}"
+        >
+      </div>
+      <div class="col-md-4">
+        <label for="detailBBmin">{{'editorder.editOrderDetailsDG.bbmin' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="orderDetail.minBBNR"
+               class="form-control"
+               disabled="true"
+               id="detailBBmin"
+               placeholder="{{'editorder.editOrderDetailsDG.bbmin' | translate}}"
+        >
+      </div>
+      <div class="col-md-4">
+        <label for="detailBBmax">{{'editorder.editOrderDetailsDG.bbmax' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="orderDetail.maxBBNR"
+               class="form-control"
+               disabled="true"
+               id="detailBBmax"
+               placeholder="{{'editorder.editOrderDetailsDG.bbmax' | translate}}"
+        >
+      </div>
+    </div>
+    <br>
+    <div class="row col-md-12">
+      <div class="col-md-6">
+        <label for="detailComment">{{'editorder.editOrderDetailsDG.comment' | translate}}</label>
+        <input type="text"
+               [(ngModel)]="orderDetail.comment"
+               class="form-control"
+               id="detailComment"
+               placeholder="{{'editorder.editOrderDetailsDG.comment' | translate}}"
+        >
+      </div>
+      <div class="col-md-6">
+        <label for="detailStatusID">{{'editorder.editOrderDetailsDG.status' | translate}}</label>
+      <combo-box
+        id="detailStatusID"
+        [listData]="orderInfoModelList"
+        [displayField]="displayField"
+        [valueField]="'id'"
+        [(ngModel)]="orderDetail.statusID"
+        [forceSelection]="true"
+        [localFilter]="true"
+        [inputClass]="'form-control'"
+        [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+        [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')"
+        [editable]="false">
+      </combo-box>
+      </div>
+    </div>
+    <br>
+
+    <div class="row mb-12 table-filter">
+      <div class="form-group col-12">
+        <div style="height:2px;width:100%;background-color:#dadada;display:block"></div>
+      </div>
+    </div>
+
+    <table class="table table-striped" [mfData]="workingUnitDGList" #mf="mfDataTable"  [mfRowsOnPage]="5" *ngIf="workingUnitDGList.length > 0" >
+      <thead>
+      <tr>
+        <th style="width: 5%">
+
+        </th>
+        <th style="width: 10%">
+          <mfDefaultSorter by="workingUnit">{{'editorder.editOrderDetailsDG.workingUnit' | translate}}</mfDefaultSorter>
+        </th>
+        <th style="width: 20%">
+          <mfDefaultSorter by="comment">{{'editorder.editOrderDetailsDG.comment' | translate}}
+          </mfDefaultSorter>
+        </th>
+
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+              <li class="ion ion-ios-eye"
+              style="cursor: pointer;
+                     cursor: hand;"
+                     ></li>
+          </td>
+            <td> <combo-box [listData]="workingUnitModelList"
+            id="orderIDWorkingUnit"
+            [displayField]="displayField"
+            [valueField]="'id'"
+            [forceSelection]="true"
+            [(ngModel)]="workingUnitMdl.id"
+            [localFilter]="true"
+            [inputClass]="'form-control'"
+            [editable]="false"
+            [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+            [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')">
+            </combo-box>
+          </td>
+
+          <td><input type="text"
+            class="form-control"
+            [(ngModel)]="commentMdl.id"
+            id="commentText"
+              ></td>
+        </tr>
+      <tr *ngFor="let item of mf.data">
+        <td></td>
+        <td>
+                     <combo-box [listData]="workingUnitModelList"
+                     [displayField]="displayField"
+                     [forceSelection]="true"
+                     [localFilter]="true"
+                     [inputPlaceholder]="item.workingUnitText"
+                     [inputClass]="'form-control'"
+                     [editable]="false"
+                     [inputPlaceholder]="translate.instant('masterdata.frontdata.pleaseSelect')"
+                     [noMatchesText]="translate.instant('masterdata.frontdata.pleaseSelect')"></combo-box>
+
+        </td>
+       <!-- <td>{{item.workingUnitText}}</td>-->
+        <td>
+        <input type="text"
+        [(ngModel)]="item.comment"
+        class="form-control"
+        id="detailComment"
+        placeholder="{{'editorder.editOrderDetailsDG.comment' | translate}}"
+
+ ></td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="4">
+          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+    <!--
+    <br>
+    <div class="row mb-12 table-filter">
+      <div class="form-group col-12">
+        <div style="height:2px;width:100%;background-color:#dadada;display:block"></div>
+
+      </div>
+     </div>
+     -->
+  </modal-body>
+
+  <modal-footer class="modal-footer">
+    <div class="button-wrapper" align="right">
+      <button type="button" (click)="onOrderSaveClicked()" class="btn btn-success" >
+        {{'usermanagement.rolebinding.save' | translate}}
+      </button>
+      <button type="button" (click)="onOrderCloseClicked()" class="btn btn-danger" >
+        {{'usermanagement.rolebinding.close' | translate}}
+      </button>
+    </div>
+  </modal-footer>
+</modal>
